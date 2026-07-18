@@ -1,0 +1,175 @@
+{
+  "common": {
+    "live": "ライブ",
+    "viewAll": "すべて表示",
+    "back": "戻る",
+    "search": "検索",
+    "autoSettlement": "自動決済 ✓",
+    "payout": "配当",
+    "winner": "勝者",
+    "loser": "敗者",
+    "wallet": "ウォレット",
+    "disconnect": "切断",
+    "today": "今日",
+    "usdc": "USDC",
+    "sol": "SOL"
+  },
+  "nav": {
+    "home": "ホーム",
+    "markets": "市場",
+    "matches": "試合",
+    "settlement": "決済エンジン",
+    "verification": "検証",
+    "history": "履歴",
+    "analytics": "分析",
+    "accessibility": "アクセシビリティ",
+    "alerts": "アラート",
+    "settings": "設定"
+  },
+  "header": {
+    "searchPlaceholder": "市場を検索...",
+    "connectWallet": "ウォレット接続",
+    "txlineApi": "TxLINE API",
+    "solana": "Solana",
+    "settlementEngine": "決済エンジン"
+  },
+  "dashboard": {
+    "liveNow": "現在ライブ",
+    "featuredMarkets": "注目市場",
+    "upcomingMatches": "今後の試合",
+    "recentSettlements": "最近の決済",
+    "settlementReplay": "決済リプレイ",
+    "mostRecent": "最新",
+    "watchFullReplay": "完全なリプレイを見る",
+    "verificationTitle": "すべての決済は検証可能です。",
+    "verificationSubtitle": "信頼せず、検証する。",
+    "verificationCta": "検証について学ぶ",
+    "viewFullHistory": "完全な履歴を見る",
+    "viewAllMatches": "すべての試合を見る"
+  },
+  "stats": {
+    "totalVolume": "総取引量",
+    "activeMarkets": "アクティブ市場",
+    "settlements24h": "決済 (24H)",
+    "avgSettlementTime": "平均決済時間",
+    "successRate": "成功率"
+  },
+  "settlement": {
+    "title": "検証エンジン",
+    "subtitle": "TxLINEパイプラインを流れるリアルタイムの暗号決済をご覧ください。真の透明性を実現。",
+    "liveSettlement": "ライブ決済",
+    "processing": "検証処理中...",
+    "completed": "決済完了",
+    "viewReceipt": "検証可能なレシートを見る",
+    "receiptTitle": "暗号レシート",
+    "receiptTxHash": "トランザクションハッシュ (Solana)",
+    "receiptMerkleRoot": "マークルルート",
+    "receiptSignature": "TxLINE署名"
+  },
+  "verification": {
+    "step1": "1 イベント",
+    "step1Desc": "TxLINEから受信",
+    "step2": "2 署名",
+    "step2Desc": "検証済み",
+    "step3": "3 マークルプルーフ",
+    "step3Desc": "検証済み",
+    "step4": "4 validate_stat",
+    "step4Desc": "実行済み",
+    "step5": "5 決済",
+    "step5Desc": "完了",
+    "step6": "6 レシート",
+    "step6Desc": "生成済み"
+  },
+  "markets": {
+    "title": "すべての市場",
+    "subtitle": "決済準備完了のライブ予測市場を発見。",
+    "matchWinner": "試合勝者",
+    "overUnderGoals": "オーバー/アンダー 2.5ゴール",
+    "firstGoal": "最初のゴール",
+    "totalCorners": "総コーナー",
+    "draw": "引き分け",
+    "none": "なし",
+    "over": "オーバー",
+    "under": "アンダー"
+  },
+  "matches": {
+    "title": "すべての試合",
+    "subtitle": "今後の検証可能なイベントを閲覧・フィルタリング。"
+  },
+  "matchDetails": {
+    "backToDashboard": "ダッシュボードに戻る",
+    "allMarkets": "すべての市場",
+    "goals": "ゴール",
+    "corners": "コーナー",
+    "proofAssistant": "プルーフアシスタント",
+    "proofAssistantActive": "プルーフアシスタント稼働中",
+    "proofAssistantDesc": "オッズは流動性プールに基づいて動的に計算されます。TxLINE APIが試合の最終状態を含む署名付きイベントを送信すると直ちに決済がトリガーされ、Solana上のマークルプルーフで完全に検証可能です。手動介入は不可能です。"
+  },
+  "history": {
+    "title": "決済履歴",
+    "subtitle": "過去の決済の完全な暗号記録。"
+  },
+  "analytics": {
+    "title": "分析ダッシュボード",
+    "subtitle": "プラットフォームの透明性と使用指標。",
+    "totalVolume7d": "総取引量 (7日間)"
+  },
+  "accessibility": {
+    "title": "アクセシビリティセンター",
+    "subtitle": "ProofLensエクスペリエンスをカスタマイズ。",
+    "visionModes": "視覚シミュレーションモード",
+    "livePreview": "ライブプレビュー",
+    "defaultVision": "デフォルト視覚",
+    "uiScaling": "UIスケーリング",
+    "uiScalingDesc": "グローバルインターフェースサイズを調整。要素は比例してスケーリングされ、レイアウトが完全に維持されます。",
+    "successIndicator": "成功インジケーター",
+    "dangerIndicator": "危険インジケーター"
+  },
+  "alerts": {
+    "title": "アクティブなアラートなし",
+    "subtitle": "市場が決済された際、ここで通知されます。"
+  },
+  "settings": {
+    "title": "アカウント設定",
+    "connectionStatus": "接続状態",
+    "walletConnected": "ウォレットが安全に接続されました。",
+    "disconnectWallet": "ウォレット切断",
+    "noWallet": "ウォレット未接続。ヘッダーのボタンで接続してください。",
+    "platformPreferences": "プラットフォーム設定",
+    "resetConfig": "設定リセット",
+    "resetConfigDesc": "すべてのローカル設定をデフォルトにリセット。"
+  },
+  "landing": {
+    "title1": "信頼せず、",
+    "title2": "検証する。",
+    "subtitle": "すべての決済が暗号学的に検証可能な初の予測市場。不透明なオッズに別れを告げ、TxLINE on Solanaで駆動する透明なオンチェーン実行へようこそ。",
+    "exploreMarkets": "市場を探索",
+    "learnVerification": "検証について学ぶ"
+  },
+  "language": {
+    "label": "言語",
+    "switch": "切り替え",
+    "notNow": "後で",
+    "neverAsk": "今後表示しない",
+    "detected": "ご希望の言語が{language}であることを検出しました。切り替えますか？"
+  },
+  "glossary": {
+    "merkleProof": "試合データが改ざんされていないことを確認する暗号学的証明。",
+    "settlement": "予測市場を解決し、配当を分配するプロセス。",
+    "over25": "試合で少なくとも3ゴールが得分されることを予測しています。",
+    "under25": "試合で3ゴール未満であることを予測しています。",
+    "txline": "決済のために署名付きイベントを送信する検証可能なデータパイプライン。",
+    "odds": "潜在的な配当を決定する確率比。",
+    "liquidity": "市場で取引可能な資金の総額。",
+    "merkleRoot": "データセット全体を表す単一のハッシュ。検証に使用。",
+    "signature": "データソースの信頼性を証明するデジタル署名。",
+    "txHash": "Solanaブロックチェーン上のトランザクションの一意識別子。",
+    "validateStat": "試合統計をオンチェーン証明に対して検証する関数。",
+    "winOver25": "試合で少なくとも3ゴールが得分されたため勝利しました。",
+    "loseOver25": "試合で3ゴール未満だったため敗北しました。",
+    "winMatchWinner": "予測したチームが試合に勝利したため勝利しました。",
+    "loseMatchWinner": "予測したチームが試合に勝利しなかったため敗北しました。",
+    "winFirstGoal": "予測したチームが最初のゴールを決めたため勝利しました。",
+    "loseFirstGoal": "予測したチームが最初のゴールを決めなかったため敗北しました。"
+  }
+}

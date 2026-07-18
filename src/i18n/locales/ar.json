@@ -1,0 +1,175 @@
+{
+  "common": {
+    "live": "مباشر",
+    "viewAll": "عرض الكل",
+    "back": "رجوع",
+    "search": "بحث",
+    "autoSettlement": "تسوية تلقائية ✓",
+    "payout": "الدفع",
+    "winner": "فائز",
+    "loser": "خاسر",
+    "wallet": "محفظة",
+    "disconnect": "قطع الاتصال",
+    "today": "اليوم",
+    "usdc": "USDC",
+    "sol": "SOL"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "markets": "الأسواق",
+    "matches": "المباريات",
+    "settlement": "محرك التسوية",
+    "verification": "التحقق",
+    "history": "السجل",
+    "analytics": "التحليلات",
+    "accessibility": "إمكانية الوصول",
+    "alerts": "التنبيهات",
+    "settings": "الإعدادات"
+  },
+  "header": {
+    "searchPlaceholder": "بحث الأسواق...",
+    "connectWallet": "ربط المحفظة",
+    "txlineApi": "TxLINE API",
+    "solana": "Solana",
+    "settlementEngine": "محرك التسوية"
+  },
+  "dashboard": {
+    "liveNow": "مباشر الآن",
+    "featuredMarkets": "الأسواق المميزة",
+    "upcomingMatches": "المباريات القادمة",
+    "recentSettlements": "التسويات الأخيرة",
+    "settlementReplay": "إعادة التسوية",
+    "mostRecent": "الأحدث",
+    "watchFullReplay": "مشاهدة الإعادة الكاملة",
+    "verificationTitle": "كل تسوية قابلة للتحقق.",
+    "verificationSubtitle": "لا تثق. تحقق.",
+    "verificationCta": "تعلم التحقق",
+    "viewFullHistory": "عرض السجل الكامل",
+    "viewAllMatches": "عرض جميع المباريات"
+  },
+  "stats": {
+    "totalVolume": "إجمالي الحجم",
+    "activeMarkets": "الأسواق النشطة",
+    "settlements24h": "التسويات (24س)",
+    "avgSettlementTime": "متوسط وقت التسوية",
+    "successRate": "معدل النجاح"
+  },
+  "settlement": {
+    "title": "محرك التحقق",
+    "subtitle": "شاهد التسويات المشفرة في الوقت الفعلي وهي تتدفق عبر خط أنابيب TxLINE. شفافية حقيقية في العمل.",
+    "liveSettlement": "تسوية مباشرة",
+    "processing": "جاري معالجة التحقق...",
+    "completed": "اكتملت التسوية",
+    "viewReceipt": "عرض الإيصال القابل للتحقق",
+    "receiptTitle": "إيصال مشفر",
+    "receiptTxHash": "هاش المعاملة (Solana)",
+    "receiptMerkleRoot": "جذور ميركل",
+    "receiptSignature": "توقيع TxLINE"
+  },
+  "verification": {
+    "step1": "1 حدث",
+    "step1Desc": "تم الاستلام من TxLINE",
+    "step2": "2 توقيع",
+    "step2Desc": "تم التحقق",
+    "step3": "3 إثبات ميركل",
+    "step3Desc": "تم التحقق",
+    "step4": "4 validate_stat",
+    "step4Desc": "تم التنفيذ",
+    "step5": "5 تسوية",
+    "step5Desc": "اكتملت",
+    "step6": "6 إيصال",
+    "step6Desc": "تم الإنشاء"
+  },
+  "markets": {
+    "title": "جميع الأسواق",
+    "subtitle": "اكتشف أسواق التنبؤ المباشرة الجاهزة للتسوية.",
+    "matchWinner": "فائز المباراة",
+    "overUnderGoals": "أكثر/أقل من 2.5 أهداف",
+    "firstGoal": "الهدف الأول",
+    "totalCorners": "إجمالي الركنيات",
+    "draw": "تعادل",
+    "none": "لا شيء",
+    "over": "أكثر",
+    "under": "أقل"
+  },
+  "matches": {
+    "title": "جميع المباريات",
+    "subtitle": "تصفح وفلترة الأحداث القابلة للتحقق القادمة."
+  },
+  "matchDetails": {
+    "backToDashboard": "العودة للرئيسية",
+    "allMarkets": "جميع الأسواق",
+    "goals": "الأهداف",
+    "corners": "الركنيات",
+    "proofAssistant": "مساعد الإثبات",
+    "proofAssistantActive": "مساعد الإثبات نشط",
+    "proofAssistantDesc": "يتم حساب الاحتمالات ديناميكياً بناءً على مجمعات السيولة. يتم تشغيل التسوية فوراً عندما تبث TxLINE API حدثاً موقعاً يحتوي على الحالة النهائية للمباراة، قابلة للتحقق بالكامل عبر إثباتات ميركل على Solana. لا يمكن التدخل يدوياً."
+  },
+  "history": {
+    "title": "سجل التسويات",
+    "subtitle": "سجل مشفر كامل للتسويات السابقة."
+  },
+  "analytics": {
+    "title": "لوحة التحليلات",
+    "subtitle": "مقاييس الشفافية والاستخدام للمنصة.",
+    "totalVolume7d": "إجمالي حجم التداول (7أ)"
+  },
+  "accessibility": {
+    "title": "مركز إمكانية الوصول",
+    "subtitle": "خصص تجربة ProofLens الخاصة بك.",
+    "visionModes": "أوضاع محاكاة البصر",
+    "livePreview": "معاينة مباشرة",
+    "defaultVision": "رؤية افتراضية",
+    "uiScaling": "تحجيم الواجهة",
+    "uiScalingDesc": "اضبط حجم الواجهة العام. سيتم تحجيم العناصر بشكل متناسب لضمان بقاء التخطيطات سليمة تماماً.",
+    "successIndicator": "مؤشر النجاح",
+    "dangerIndicator": "مؤشر الخطر"
+  },
+  "alerts": {
+    "title": "لا توجد تنبيهات نشطة",
+    "subtitle": "سيتم إشعارك هنا عند تسوية أسواقك."
+  },
+  "settings": {
+    "title": "إعدادات الحساب",
+    "connectionStatus": "حالة الاتصال",
+    "walletConnected": "تم ربط المحفظة بأمان.",
+    "disconnectWallet": "قطع اتصال المحفظة",
+    "noWallet": "لا توجد محفظة متصلة. استخدم زر الرأس للاتصال.",
+    "platformPreferences": "تفضيلات المنصة",
+    "resetConfig": "إعادة تعيين التكوين",
+    "resetConfigDesc": "إعادة تعيين جميع التكوينات المحلية إلى الافتراضي."
+  },
+  "landing": {
+    "title1": "لا تثق.",
+    "title2": "تحقق.",
+    "subtitle": "أول سوق تنبؤ حيث كل تسوية قابلة للتحقق المشفر. وداعاً للاحتمالات المعتمة ومرحباً بالتنفيذ الشفاف على السلسلة المدعوم بواسطة TxLINE على Solana.",
+    "exploreMarkets": "استكشاف الأسواق",
+    "learnVerification": "تعلم التحقق"
+  },
+  "language": {
+    "label": "اللغة",
+    "switch": "تبديل",
+    "notNow": "ليس الآن",
+    "neverAsk": "لا تسأل مرة أخرى",
+    "detected": "لاحظنا أن لغتك المفضلة هي {language}. هل تريد التبديل؟"
+  },
+  "glossary": {
+    "merkleProof": "إثبات مشفر يؤكد أن بيانات المباراة لم يتم التلاعب بها.",
+    "settlement": "عملية حل سوق التنبؤ وتوزيع المدفوعات.",
+    "over25": "أنت تتوقع أن يكون هناك ثلاثة أهداف على الأقل في المباراة.",
+    "under25": "أنت تتوقع أن يكون هناك أقل من ثلاثة أهداف في المباراة.",
+    "txline": "خط أنابيب بيانات قابل للتحقق يبث أحداثاً موقعة للتسوية.",
+    "odds": "نسبة الاحتمال التي تحدد دفعتك المحتملة.",
+    "liquidity": "إجمالي الأموال المتاحة للتداول في السوق.",
+    "merkleRoot": "تجزئة واحدة تمثل مجموعة البيانات بأكملها، تستخدم للتحقق.",
+    "signature": "توقيع رقمي يثبت صحة مصدر البيانات.",
+    "txHash": "معرف فريد لمعاملة على blockchain Solana.",
+    "validateStat": "دالة تتحقق من إحصائيات المباراة مقابل الإثبات على السلسلة.",
+    "winOver25": "لقد فزت لأنه تم تسجيل ثلاثة أهداف على الأقل في المباراة.",
+    "loseOver25": "لقد خسرت لأنه تم تسجيل أقل من ثلاثة أهداف في المباراة.",
+    "winMatchWinner": "لقد فزت لأن الفريق الذي توقعته فاز بالمباراة.",
+    "loseMatchWinner": "لقد خسرت لأن الفريق الذي توقعته لم يفز بالمباراة.",
+    "winFirstGoal": "لقد فزت لأن الفريق الذي توقعته سجل الهدف الأول.",
+    "loseFirstGoal": "لقد خسرت لأن الفريق الذي توقعته لم يسجل الهدف الأول."
+  }
+}

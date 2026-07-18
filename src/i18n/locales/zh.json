@@ -1,0 +1,175 @@
+{
+  "common": {
+    "live": "直播",
+    "viewAll": "查看全部",
+    "back": "返回",
+    "search": "搜索",
+    "autoSettlement": "自动结算 ✓",
+    "payout": "赔付",
+    "winner": "获胜",
+    "loser": "失败",
+    "wallet": "钱包",
+    "disconnect": "断开",
+    "today": "今天",
+    "usdc": "USDC",
+    "sol": "SOL"
+  },
+  "nav": {
+    "home": "首页",
+    "markets": "市场",
+    "matches": "比赛",
+    "settlement": "结算引擎",
+    "verification": "验证",
+    "history": "历史",
+    "analytics": "分析",
+    "accessibility": "无障碍",
+    "alerts": "提醒",
+    "settings": "设置"
+  },
+  "header": {
+    "searchPlaceholder": "搜索市场...",
+    "connectWallet": "连接钱包",
+    "txlineApi": "TxLINE API",
+    "solana": "Solana",
+    "settlementEngine": "结算引擎"
+  },
+  "dashboard": {
+    "liveNow": "正在直播",
+    "featuredMarkets": "精选市场",
+    "upcomingMatches": "即将开始",
+    "recentSettlements": "最近结算",
+    "settlementReplay": "结算回放",
+    "mostRecent": "最新",
+    "watchFullReplay": "观看完整回放",
+    "verificationTitle": "每笔结算都可验证。",
+    "verificationSubtitle": "不要信任。要验证。",
+    "verificationCta": "了解验证",
+    "viewFullHistory": "查看完整历史",
+    "viewAllMatches": "查看所有比赛"
+  },
+  "stats": {
+    "totalVolume": "总交易量",
+    "activeMarkets": "活跃市场",
+    "settlements24h": "结算 (24H)",
+    "avgSettlementTime": "平均结算时间",
+    "successRate": "成功率"
+  },
+  "settlement": {
+    "title": "验证引擎",
+    "subtitle": "观看通过TxLINE管道流动的实时加密结算。真正的透明度。",
+    "liveSettlement": "实时结算",
+    "processing": "验证处理中...",
+    "completed": "结算完成",
+    "viewReceipt": "查看可验证收据",
+    "receiptTitle": "加密收据",
+    "receiptTxHash": "交易哈希 (Solana)",
+    "receiptMerkleRoot": "Merkle根",
+    "receiptSignature": "TxLINE签名"
+  },
+  "verification": {
+    "step1": "1 事件",
+    "step1Desc": "从TxLINE接收",
+    "step2": "2 签名",
+    "step2Desc": "已验证",
+    "step3": "3 Merkle证明",
+    "step3Desc": "已验证",
+    "step4": "4 validate_stat",
+    "step4Desc": "已执行",
+    "step5": "5 结算",
+    "step5Desc": "已完成",
+    "step6": "6 收据",
+    "step6Desc": "已生成"
+  },
+  "markets": {
+    "title": "所有市场",
+    "subtitle": "发现准备结算的实时预测市场。",
+    "matchWinner": "比赛胜者",
+    "overUnderGoals": "大/小 2.5球",
+    "firstGoal": "首个进球",
+    "totalCorners": "总角球",
+    "draw": "平局",
+    "none": "无",
+    "over": "大",
+    "under": "小"
+  },
+  "matches": {
+    "title": "所有比赛",
+    "subtitle": "浏览和筛选即将到来的可验证事件。"
+  },
+  "matchDetails": {
+    "backToDashboard": "返回首页",
+    "allMarkets": "所有市场",
+    "goals": "进球",
+    "corners": "角球",
+    "proofAssistant": "证明助手",
+    "proofAssistantActive": "证明助手已激活",
+    "proofAssistantDesc": "赔率根据流动性池动态计算。当TxLINE API广播包含比赛最终状态的签名事件时，结算立即触发，可通过Solana上的Merkle证明完全验证。无法手动干预。"
+  },
+  "history": {
+    "title": "结算历史",
+    "subtitle": "过去结算的完整加密日志。"
+  },
+  "analytics": {
+    "title": "分析仪表板",
+    "subtitle": "平台透明度和使用指标。",
+    "totalVolume7d": "总交易量 (7天)"
+  },
+  "accessibility": {
+    "title": "无障碍中心",
+    "subtitle": "自定义您的ProofLens体验。",
+    "visionModes": "视觉模拟模式",
+    "livePreview": "实时预览",
+    "defaultVision": "默认视觉",
+    "uiScaling": "界面缩放",
+    "uiScalingDesc": "调整全局界面大小。元素将按比例缩放，确保布局完美无损。",
+    "successIndicator": "成功指示器",
+    "dangerIndicator": "危险指示器"
+  },
+  "alerts": {
+    "title": "无活动提醒",
+    "subtitle": "当您的市场结算时，您将在此收到通知。"
+  },
+  "settings": {
+    "title": "账户设置",
+    "connectionStatus": "连接状态",
+    "walletConnected": "钱包已安全连接。",
+    "disconnectWallet": "断开钱包",
+    "noWallet": "未连接钱包。使用标题栏按钮连接。",
+    "platformPreferences": "平台偏好",
+    "resetConfig": "重置配置",
+    "resetConfigDesc": "将所有本地配置重置为默认值。"
+  },
+  "landing": {
+    "title1": "不要信任。",
+    "title2": "要验证。",
+    "subtitle": "第一个每笔结算都可加密验证的预测市场。告别不透明的赔率，拥抱由TxLINE on Solana驱动的透明链上执行。",
+    "exploreMarkets": "探索市场",
+    "learnVerification": "了解验证"
+  },
+  "language": {
+    "label": "语言",
+    "switch": "切换",
+    "notNow": "以后再说",
+    "neverAsk": "不再询问",
+    "detected": "我们检测到您的首选语言是{language}。是否要切换？"
+  },
+  "glossary": {
+    "merkleProof": "确认比赛数据未被篡改的加密证明。",
+    "settlement": "解决预测市场并分配赔付的过程。",
+    "over25": "您预测比赛中将有至少三个进球。",
+    "under25": "您预测比赛中将少于三个进球。",
+    "txline": "广播签名事件以进行结算的可验证数据管道。",
+    "odds": "决定您潜在赔付的概率比率。",
+    "liquidity": "市场中可用于交易的总资金。",
+    "merkleRoot": "代表整个数据集的单个哈希，用于验证。",
+    "signature": "证明数据源真实性的数字签名。",
+    "txHash": "Solana区块链上交易的唯一标识符。",
+    "validateStat": "根据链上证明验证比赛统计数据的函数。",
+    "winOver25": "您赢了，因为比赛中至少进了三个球。",
+    "loseOver25": "您输了，因为比赛中进球少于三个。",
+    "winMatchWinner": "您赢了，因为您预测的球队赢得了比赛。",
+    "loseMatchWinner": "您输了，因为您预测的球队没有赢得比赛。",
+    "winFirstGoal": "您赢了，因为您预测的球队进了第一个球。",
+    "loseFirstGoal": "您输了，因为您预测的球队没有进第一个球。"
+  }
+}

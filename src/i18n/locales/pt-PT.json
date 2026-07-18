@@ -1,0 +1,175 @@
+{
+  "common": {
+    "live": "EM DIRETO",
+    "viewAll": "Ver todos",
+    "back": "Voltar",
+    "search": "Pesquisar",
+    "autoSettlement": "Liquidação automática ✓",
+    "payout": "Pagamento",
+    "winner": "VENCEDOR",
+    "loser": "PERDEDOR",
+    "wallet": "Carteira",
+    "disconnect": "Desligar",
+    "today": "Hoje",
+    "usdc": "USDC",
+    "sol": "SOL"
+  },
+  "nav": {
+    "home": "Início",
+    "markets": "Mercados",
+    "matches": "Jogos",
+    "settlement": "Motor de Liquidação",
+    "verification": "Verificação",
+    "history": "Histórico",
+    "analytics": "Análises",
+    "accessibility": "Acessibilidade",
+    "alerts": "Alertas",
+    "settings": "Definições"
+  },
+  "header": {
+    "searchPlaceholder": "Pesquisar mercados...",
+    "connectWallet": "Ligar Carteira",
+    "txlineApi": "TxLINE API",
+    "solana": "Solana",
+    "settlementEngine": "Motor de Liquidação"
+  },
+  "dashboard": {
+    "liveNow": "Em Direto Agora",
+    "featuredMarkets": "Mercados em Destaque",
+    "upcomingMatches": "Próximos Jogos",
+    "recentSettlements": "Liquidações Recentes",
+    "settlementReplay": "Replay da Liquidação",
+    "mostRecent": "Mais recente",
+    "watchFullReplay": "Ver Replay Completo",
+    "verificationTitle": "Cada liquidação é verificável.",
+    "verificationSubtitle": "Não Confie. Verifique.",
+    "verificationCta": "Aprender Verificação",
+    "viewFullHistory": "Ver histórico completo",
+    "viewAllMatches": "Ver todos os jogos"
+  },
+  "stats": {
+    "totalVolume": "VOLUME TOTAL",
+    "activeMarkets": "MERCADOS ATIVOS",
+    "settlements24h": "LIQUIDAÇÕES (24H)",
+    "avgSettlementTime": "TEMPO MÉDIO LIQUIDAÇÃO",
+    "successRate": "TAXA DE SUCESSO"
+  },
+  "settlement": {
+    "title": "Motor de Verificação",
+    "subtitle": "Acompanhe liquidações criptográficas em tempo real através do pipeline TxLINE. Verdadeira transparência em ação.",
+    "liveSettlement": "Liquidação em Direto",
+    "processing": "A processar verificação...",
+    "completed": "Liquidação Concluída",
+    "viewReceipt": "Ver Recibo Verificável",
+    "receiptTitle": "Recibo Criptográfico",
+    "receiptTxHash": "Hash da Transação (Solana)",
+    "receiptMerkleRoot": "Raiz de Merkle",
+    "receiptSignature": "Assinatura TxLINE"
+  },
+  "verification": {
+    "step1": "1 Evento",
+    "step1Desc": "Recebido da TxLINE",
+    "step2": "2 Assinatura",
+    "step2Desc": "Validada",
+    "step3": "3 Prova de Merkle",
+    "step3Desc": "Validada",
+    "step4": "4 validate_stat",
+    "step4Desc": "Executado",
+    "step5": "5 Liquidação",
+    "step5Desc": "Concluída",
+    "step6": "6 Recibo",
+    "step6Desc": "Gerado"
+  },
+  "markets": {
+    "title": "Todos os Mercados",
+    "subtitle": "Descubra mercados de previsão em direto prontos para liquidação.",
+    "matchWinner": "Vencedor do Jogo",
+    "overUnderGoals": "Mais/Menos 2.5 Golos",
+    "firstGoal": "Primeiro Golo",
+    "totalCorners": "Total de Cantos",
+    "draw": "Empate",
+    "none": "Nenhum",
+    "over": "Mais",
+    "under": "Menos"
+  },
+  "matches": {
+    "title": "Todos os Jogos",
+    "subtitle": "Navegue e filtre eventos verificáveis futuros."
+  },
+  "matchDetails": {
+    "backToDashboard": "Voltar ao Início",
+    "allMarkets": "Todos os Mercados",
+    "goals": "Golos",
+    "corners": "Cantos",
+    "proofAssistant": "Assistente de Provas",
+    "proofAssistantActive": "Assistente de Provas Ativo",
+    "proofAssistantDesc": "As odds são calculadas dinamicamente com base nos pools de liquidez. A liquidação é acionada imediatamente quando a API TxLINE transmite um evento assinado com o estado final do jogo, totalmente verificável via Provas de Merkle na Solana. Nenhuma intervenção manual é possível."
+  },
+  "history": {
+    "title": "Histórico de Liquidações",
+    "subtitle": "Registo criptográfico completo de liquidações passadas."
+  },
+  "analytics": {
+    "title": "Painel de Análises",
+    "subtitle": "Métricas de transparência e utilização da plataforma.",
+    "totalVolume7d": "Volume Total de Negociações (7D)"
+  },
+  "accessibility": {
+    "title": "Centro de Acessibilidade",
+    "subtitle": "Personalize a sua experiência ProofLens.",
+    "visionModes": "Modos de Simulação de Visão",
+    "livePreview": "Pré-visualização",
+    "defaultVision": "Visão Padrão",
+    "uiScaling": "Escala de Interface",
+    "uiScalingDesc": "Ajuste o tamanho global da interface. Os elementos serão dimensionados proporcionalmente, garantindo layouts perfeitamente intactos.",
+    "successIndicator": "Indicador de Sucesso",
+    "dangerIndicator": "Indicador de Perigo"
+  },
+  "alerts": {
+    "title": "Sem Alertas Ativos",
+    "subtitle": "Será notificado aqui quando os seus mercados forem liquidados."
+  },
+  "settings": {
+    "title": "Definições de Conta",
+    "connectionStatus": "Estado da Ligação",
+    "walletConnected": "Carteira ligada com segurança.",
+    "disconnectWallet": "Desligar Carteira",
+    "noWallet": "Sem carteira ligada. Use o botão no cabeçalho para ligar.",
+    "platformPreferences": "Preferências da Plataforma",
+    "resetConfig": "Repor Configuração",
+    "resetConfigDesc": "Repor todas as configurações locais para o padrão."
+  },
+  "landing": {
+    "title1": "Não Confie.",
+    "title2": "Verifique.",
+    "subtitle": "O primeiro mercado de previsão onde cada liquidação é criptograficamente verificável. Diga adeus às odds opacas e olá à execução transparente on-chain, alimentada por TxLINE na Solana.",
+    "exploreMarkets": "Explorar Mercados",
+    "learnVerification": "Aprender Verificação"
+  },
+  "language": {
+    "label": "Idioma",
+    "switch": "Trocar",
+    "notNow": "Agora não",
+    "neverAsk": "Não perguntar novamente",
+    "detected": "Notámos que o seu idioma preferido é {language}. Deseja trocar?"
+  },
+  "glossary": {
+    "merkleProof": "Prova criptográfica que confirma que os dados do jogo não sofreram alterações.",
+    "settlement": "O processo de resolver um mercado de previsão e distribuir os pagamentos.",
+    "over25": "Está a prever que haverá pelo menos três golos no jogo.",
+    "under25": "Está a prever que haverá menos de três golos no jogo.",
+    "txline": "Um pipeline de dados verificável que transmite eventos assinados para liquidação.",
+    "odds": "A razão de probabilidade que determina o seu pagamento potencial.",
+    "liquidity": "O montante total de fundos disponíveis para negociação num mercado.",
+    "merkleRoot": "Um único hash que representa todo o conjunto de dados, usado para verificação.",
+    "signature": "Uma assinatura digital que prova a autenticidade da fonte de dados.",
+    "txHash": "Um identificador único para uma transação na blockchain Solana.",
+    "validateStat": "Uma função que valida as estatísticas do jogo contra a prova on-chain.",
+    "winOver25": "Ganhou porque foram marcados pelo menos três golos no jogo.",
+    "loseOver25": "Perdeu porque foram marcados menos de três golos no jogo.",
+    "winMatchWinner": "Ganhou porque a equipa que previu ganhou o jogo.",
+    "loseMatchWinner": "Perdeu porque a equipa que previu não ganhou o jogo.",
+    "winFirstGoal": "Ganhou porque a equipa que previu marcou o primeiro golo.",
+    "loseFirstGoal": "Perdeu porque a equipa que previu não marcou o primeiro golo."
+  }
+}

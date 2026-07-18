@@ -1,0 +1,438 @@
+Inscrição na Copa do Mundo de Pista 
+Nota: 
+1. No campo "Link para sua Submissão", envie o link mais útil do seu projeto de hackathon 
+(pode ser um vídeo de tear, link do GitHub, site, etc.) 
+2. Para ser elegível para diferentes trilhas, você precisa se inscrever para cada desafio 
+separadamente 
+3. Não há restrição no número de faixas para as quais você pode se inscrever 
+Link para sua submissão 
+Certifique-se de que este link esteja acessível a todos! 
+https:// 
+Adicione um link 
+Tweet Link 
+Isso ajuda os patrocinadores a descobrirem (e talvez repostar) seu trabalho no X! Se esta 
+postagem for para uma recompensa de X thread, você pode ignorar este campo. 
+https:// 
+Adicionar o link de um tweet 
+Título do Projeto 
+Explique brevemente seu projeto 
+Link para o seu MVP ao vivo e de trabalho. Certifique-se de que seja acessível ao público. 
+https:// 
+Adicione um link... 
+Link para seu vídeo de demonstração ao vivo (YouTube, Loom, etc). Deve ser visualizada por 
+qualquer pessoa com o link. 
+https:// 
+Adicione um link... 
+Link do Repositório Público do Projeto (Github, Gitlab, etc.) 
+https:// 
+Adicione um link... 
+Link para a Documentação Técnica do seu Projeto 
+https:// 
+Adicione um link... 
+Link para o Perfil X do seu Projeto ou um post X sobre seu Projeto 
+https:// 
+Adicione um link... 
+Compartilhe a experiência da sua equipe usando a API do TxLINE. O que você mais gostou e 
+onde encontrou o atrito? 
+Mais alguma coisa? 
+Se você tiver outros links ou informações que gostaria de compartilhar conosco, por favor, 
+adicione aqui! 
+Confirmo que revisei o escopo desta trilha e que minha submissão atende aos requisitos 
+especificados. Enviar um projeto que não atenda aos requisitos de submissão, incluindo 
+potencial spam, pode resultar em restrições para futuras submissões. ----------------------------------------------------- 
+Mercado Automático para Torneios Completos: Uma plataforma projetada para organizar, 
+exibir e resolver automaticamente previsões padrão de vencedor, gols totais ou primeiro 
+artilheiro ao longo do calendário de 104 partidas do torneio, usando o fluxo TxLINE que está 
+chegando. ----------------------------------------------------- 
+About TxLINE 
+TxLINE is a high-performance data layer providing real-time sports data and consensus betting 
+odds. It features a single, normalised JSON schema across all competitions, allowing you to 
+scale your application seamlessly from local matches to international tournaments. 
+Track Description 
+TxLINE streams real-time World Cup data—including scores, match events, and odds—backed 
+by cryptographic signatures anchored on Solana. This track invites developers to leverage 
+these data streams to build prediction platforms, consumer sportsbook interfaces, or data 
+dashboards. 
+This track is open-ended to accommodate a variety of backend structures: 
+Data-Driven Web3 Platforms: You can build an application that utilizes our high-speed SSE 
+Stream to power frontend user interfaces, using incoming match updates to dynamically 
+trigger prediction resolutions on your platform. 
+Experimental Verification Layer (Optional): Developers can use TxLINE's publicly verifiable 
+cryptographic Merkle proofs (such as the scores validation primitive) to verify match data 
+signatures. If your team chooses to design independent, custom check gates or validation logic 
+using these primitives, your effort will be highly valued by the judges. 
+Architectural considerations: 
+No P2P Asset Transfers: The internal TxLINE credit token is strictly locked to our program for 
+data-authorization and cannot be used by contestants or end-users for peer-to-peer staking, 
+wagering pools, or wallet transfers. 
+Permissionless results validation: Teams are highly encouraged to build trustless, peer-to-peer 
+wagering pools, smart contract escrows, and decentralised AMMs. Contestants can use TxLINE 
+cryptographic Merkle proofs to build on-chain settlement engines that unlock funds and 
+execute transfers natively on Solana on other coins than TxLINE. 
+Custom On-Chain Settlement Engines: Contestants are invited to write custom on-chain 
+settlement logic. Your smart contracts would utilize Cross-Program Invocations (CPIs) into 
+TxLINE's validate_stat instruction to confirm match outcomes trustlessly and automate 
+contract releases. 
+Ideas to get started 
+Full-Tournament Auto-Market: A platform designed to automatically organise, display, and 
+resolve standard winner, total goals, or first scorer predictions across the 104-match 
+tournament schedule using the incoming TxLINE stream. 
+Verifiable Resolution UI: A feature that saves or displays the data "receipt" or Merkle proof 
+from TxLINE's feed, giving users a clear, traceable record of the match outcome without 
+needing to trust an external oracle. 
+Prediction Market Viewer: A clean dashboard or analytics interface that tracks active volumes, 
+changing liquidity, or shifting odds across World Cup prediction spaces, updating implied 
+probabilities using the real-time feed. 
+Decentralized Prediction Markets & AMMs: Build an Automated Market Maker or order-book 
+exchange that holds user funds (such as USDC) in escrow. When an event concludes, a user or 
+keeper bot triggers your contract to CPI into TxLINE's validation program, trustlessly unlocking 
+and routing funds to the winners. 
+Parametric Sports Insurance & Prop Bets: Create a decentralized insurance or custom prop
+betting protocol where users/businesses lock collateral into a neutral PDA based on specific 
+match criteria (e.g., "Team A Corners + Team B Corners > 10"). The protocol automatically 
+releases payouts directly to user wallets the second a verified TxLINE proof is submitted on
+chain. 
+Judging Criteria 
+Core Functionality: Does the application smoothly ingest and operate using live or simulated 
+TxLINE data feeds? 
+User Experience & Use Case: Is the platform intuitive, and does it cover a compelling scenario 
+for soccer fans or analytical users? 
+Code Quality & Logic: Is the application's resolution and validation code clean, well
+documented, and deterministic? 
+Note: Submissions will be evaluated heavily based on the demo video. Since the matches will 
+end after the submission deadline, there may not be live activity on the project during review. 
+Please make sure your demo clearly showcases the product experience, user flow, and core 
+functionality. 
+Ideal Submission and Eligibility 
+A deployed (mainnet or devnet) build using TxLINE feeds. 
+Include a demo video and public repo. 
+Open to individuals, teams (maximum 3 members in each team), and AI agents but the 
+submission should still be owned by a real person/team/entity eligible to receive prizes via 
+Superteam Earn. 
+Must use TxLINE data as a primary data source. 
+Submissions must include a working build, not a concept or wireframe. 
+Submission Requirements 
+Demo Video (Up to 5 Minutes): A link (Loom/YouTube) showing the problem, live app 
+walkthrough, and how TxLINE powers the backend. (Absolute requirement to pass initial 
+screening) 
+Public Repo: A link to your Project’s public Github repo. 
+Application Access: A working link to your deployed website OR a functional API/Devnet 
+endpoint for judges to test. 
+Brief Technical Documentation: A quick overview covering your core idea, business/technical 
+highlights, and a list of the specific TxLINE endpoints you used. 
+Feedback: What was your team’s experience using the TxLINE API? (What did you like most, 
+and where did you hit friction?) 
+Submissions consisting only of pitch decks, wireframes, mockups, or non-working concepts will 
+be automatically disqualified. 
+Judging, Selection & Winner Process 
+Initial Review & Shortlisting: Following the close of submissions at July 19, 2026, 23:59 UTC, 
+the judges will review entries and compile a shortlist of top-performing teams. 
+Winner Selection: Final track winners (1st, 2nd, and 3rd place for each track) will be evaluated 
+comprehensively against the specified tracking criteria and announced shortly after the live 
+interview rounds. 
+Post-Hackathon Support: Distribution of stablecoin prizes and subsequent 
+engineering/ecosystem support will be officially provisioned following the successful 
+conclusion of winner interviews. 
+Prizes: 
+1st Place – 12,000 USDT 
+2nd Place – 4,000 USDT 
+3rd Place – 2,000 USDT 
+Timeline  
+Submissions Open: June 24, 2026 (15:00 UTC) 
+Submissions Close: July 19, 2026 (23:59 UTC) 
+Winner Announcement: July 29, 2026 (15:00 UTC) 
+Resources: 
+Quickstart: https://txline.txodds.com/documentation/quickstart 
+Developer support: Discord, Telegram 
+World Cup Documentation: https://txline.txodds.com/documentation/worldcup 
+Exclusive Hackathon Access: TxODDS is waiving all commercial data fees for this event. Live, 
+premium World Cup match feeds are fully accessible at zero cost through Saturday, July 19, 
+2026 (23:59 UTC). 
+Notes: 
+Participants are responsible for ensuring their submissions comply with all applicable laws and 
+regulations, including gambling, gaming, financial, consumer protection, and securities laws in 
+their jurisdiction. TxLINE and Superteam Earn do not endorse or authorise illegal betting, 
+wagering, or financial activity. 
+By participating in this hackathon, all participants agree to the TxODDS Hackathon Terms & 
+Conditions, in addition to Superteam Earn’s standard terms and platform rules. Please review 
+the full T&C document before entering. 
+We want TxLINE to be the ultimate data layer for sports and betting apps. As you build over 
+the course of this hackathon, your feedback is incredibly valuable to us! 
+Found a bug or disliked a specific endpoint? Let us know in the chat so our team can jump in 
+and fix it for you in real-time. 
+Love the schema? Let us know what worked in the submission form on Superteam Earn. ----------------------------------------------------- 
+� Pessoal, chegamos na fase de ideação! 
+Agora é a hora de colocar todas as ideias na mesa. Não se preocupem se a ideia parece 
+simples, maluca, incompleta ou se vocês nunca participaram de um hackathon antes. Muitas 
+vezes as melhores soluções surgem justamente dessas conversas iniciais. 
+Se vocês tiverem alguma ideia de projeto, funcionalidade, jogo, bot, aplicativo, experiência 
+para torcedores ou qualquer outra coisa relacionada ao desafio, compartilhem aqui no grupo. 
+Ao apresentar uma ideia, pode ajudar responder algumas perguntas: 
+� O que ela faz? Como vocês imaginam a experiência para o usuário? 
+Como podemos torná-la viável com o tempo, equipe e recursos que temos hoje? 
+� O que seria o MVP (a parte mais importante para entregar) e por quê? 
+� Qual problema ela resolve ou qual diversão proporciona? 
+� Quem usaria? Por que essas pessoas se interessariam pelo produto? 
+� O que a torna diferente ou mais interessante do que soluções que já existem? 
+� Como ela poderia gerar receita, reduzir custos ou criar valor para usuários e parceiros? 
+� Como ela poderia crescer no futuro? Existem novas funcionalidades ou oportunidades de 
+expansão? 
+Também vale comentar nas ideias dos colegas, sugerir melhorias, combinar conceitos ou 
+levantar dúvidas. O objetivo agora não é decidir o projeto final, mas explorar possibilidades e 
+descobrir o que mais anima o time. 
+Não existe ideia ruim nesta fase. Quanto mais sugestões tivermos, maior a chance de 
+encontrarmos algo criativo, divertido e com potencial para se destacar no hackathon. 
+Bora construir algo incrível juntos! �� ----------------------------------------------------- 
+Uma plataforma de mercado de previsão da Copa do Mundo onde usuários apostam em 
+possíveis resultados das partidas, acompanham probabilidades em tempo real e recebem 
+liquidação automática dos vencedores através dos dados verificados da TxLINE na Solana. --------------------------------------------------- 
+Uma plataforma de previsão esportiva que analisa odds e dados da TxLINE para criar mercados 
+de previsão da Copa do Mundo, acompanhando probabilidades em tempo real e validando 
+automaticamente os resultados das partidas ---------------------------------------------- 
+� É AGORA! � 
+O Kauê tá ENTRANDO ao vivo pra revelar os segredos da API que vão te fazer amassar no 
+World Cup Hackathon �� 
+� Começando JÁ 
+� Dicas que valem os US$ 50 mil em prêmios 
+� Ao vivo, sem enrolação 
+� Corre lá! 
+� YouTube: youtube.com/watch?v=B6r_3yPHKZ8 
+�
+� Twitter/X: x.com/i/broadcasts/1DGleervnnoJL ------------------------------------------------------- 
+O hackathon da Copa do Mundo tem o desafio de integrar dados de partidas em tempo real a 
+produtos reais.  
+US$ 52 mil em prêmios �� 
+Tudo isso com a tecnologia da API de futebol ao vivo da TxODDS na plataforma Solana. 
+Links importantes: 
+Workshop: 
+https://www.youtube.com/watch?v=B6r_3yPHKZ8 
+Quickstart: https://txline.txodds.com/documentation/quickstart 
+Documentação da Copa: https://txline.txodds.com/documentation/worldcup 
+Chat TxLine Global  
+t.me/TxLINEChat 
+faucets 
+https://pinestake.com/en/faucet 
+Submissão para a Trilha Brasil  
+(Obrigatório 1 membro da equipe presencial na Solana House, dia 18) 
+https://superteam.fun/earn/listing/world-cup-hackathon-brasil/ 
+Inscrição Luma para garantir sua vaga na Solana House : https://luma.com/0gkcww39 
+Desafios  
+* Mercados de previsão e liquidação; 
+https://superteam.fun/earn/listing/prediction-markets-and-settlement 
+* Experiências do consumidor e do fã 
+https://superteam.fun/earn/listing/consumer-and-fan-experiences 
+* Ferramentas e agentes de negociação 
+https://superteam.fun/earn/listing/trading-tools-and-agents ----------------------------------------------- 
+[11:31, 17/07/2026] +55 81 8570-8677: https://faucet.solana.com/ 
+[11:31, 17/07/2026] +55 81 8570-8677: https://pinestake.com/en/faucet 
+[11:31, 17/07/2026] +55 81 8570-8677: Acho que isso é tudo de importante que mandaram 
+ate agora 
+[11:31, 17/07/2026] +55 81 8570-8677: Mas tipo 
+[11:31, 17/07/2026] +55 81 8570-8677: Ainda não definimos a solução 
+[11:36, 17/07/2026] +55 81 8570-8677: Pelo que eu estava vendo 
+[11:44, 17/07/2026] +55 81 8570-8677: ----------------------------------------------------- 
+[11:46, 17/07/2026] +55 81 8570-8677: Já sobre o(s) problema(s): 
+[11:48, 17/07/2026] +55 81 8570-8677: 1 - Falta de transparência na liquidação: Quando uma 
+aposta acaba, a plataforma diz quem ganhou. Mas como sabemos que ela falou a verdade? Se 
+não conseguimos conferir, precisamos apenas confiar nela, e isso pode deixar as pessoas 
+inseguras. 
+Isso gera dúvidas como: - "Quem decidiu esse resultado?" - "A plataforma manipulou?" - "Ela atrasou a liquidação?" - "Os dados são confiáveis?" -  
+A partir disso podemos pensar em:  - dados assinados criptograficamente; - provas de Merkle; - validação on-chain. 
+E com isso eliminar a necessidade de confiar na plataforma. A própria prova criptográfica 
+valida o resultado. Uma possibilidade é que cada mercado exiba a prova criptográfica usada 
+para liquidar a aposta, permitindo que qualquer pessoa verifique o resultado. 
+Referencias que podemos usar: https://arxiv.org/pdf/2606.17503 
+[11:50, 17/07/2026] +55 81 8570-8677: 2 - Liquidação lenta: Às vezes o jogo já terminou, mas 
+a plataforma demora para dizer quem ganhou e entregar o prêmio. Isso deixa as pessoas 
+esperando sem necessidade. 
+Isso acontece por que elas dependem de: - operadores; - oráculos; - processos internos 
+Precisamos ver se a TxLINE permite automatizar isso imediatamente após o evento esportivo. 
+Por que isso faria com que: - reduzisse o custo operacional; - diminuísse o tempo; - evitasse erros humanos. 
+[11:52, 17/07/2026] +55 81 8570-8677: 3 - Criar centenas de mercados manualmente: Uma 
+Copa do Mundo tem muitos jogos e cada jogo pode ter várias previsões diferentes. Fazer tudo 
+isso na mão dá muito trabalho, demora e aumenta a chance de cometer erros. 
+Alguns exemplos de mercados: - vencedor - over/under - primeiro gol - primeiro cartão - escanteios - artilheiro 
+Uma possibilidade é fazer com que a plataforma crie automaticamente mercados para todas 
+as partidas conforme o calendário 
+[11:53, 17/07/2026] +55 81 8570-8677: 4 - Falta de confiança em mercados descentralizados 
+Quando duas pessoas fazem uma aposta sem uma empresa no meio, pode surgir a dúvida de 
+quem está certo ou se alguém vai tentar enganar o outro. É preciso uma forma de provar o 
+resultado para todos. 
+"Como garantir que ninguém manipule o resultado?" 
+Justamente fornecendo uma camada verificável de dados. 
+[11:54, 17/07/2026] +55 81 8570-8677: 5 - As informações mudam muito rápido 
+Durante um jogo tudo pode mudar em segundos: sai um gol, acontece um cartão vermelho ou 
+um pênalti. As previsões e as chances precisam acompanhar essas mudanças quase na mesma 
+velocidade. 
+A possibilidade é usar uma API em tempo real 
+[11:55, 17/07/2026] +55 81 8570-8677: 6. Informações espalhadas 
+Quem gosta de acompanhar futebol normalmente precisa abrir vários aplicativos diferentes 
+para ver placar, estatísticas, probabilidades e notícias. Isso é cansativo e confuso. Uma 
+possibilidade é centralizar as coisas: - odds - estatísticas - mercados - liquidação - histórico 
+[11:56, 17/07/2026] +55 81 8570-8677: 7 - Muito difícil para iniciantes: Quem nunca usou um 
+mercado de previsão pode achar tudo complicado, porque existem muitos números, termos 
+diferentes e regras difíceis de entender. Como simplificar: - odds - probabilidades - payout - liquidação 
+[11:58, 17/07/2026] +55 81 8570-8677: 8 - Não dá para conferir o resultado 
+Depois que uma aposta termina, a plataforma normalmente só mostra quem ganhou. Ela 
+quase nunca explica de onde veio aquele resultado ou como ele foi confirmado. 
+Perguntas que ficam: - Qual dado foi usado? - Quem confirmou? - Quando? 
+Possibilidades são atuar com foco em Timestamp, Match Event, Hash, Merkle Proof, Signature, 
+além de ter uma autenticação guiada onde pode ser direcionado para um local mais oficial que 
+confirme esses dados e informações. 
+[11:59, 17/07/2026] +55 81 8570-8677: 9 -  Previsões mais detalhadas são difíceis: Algumas 
+pessoas querem prever coisas mais específicas, como quem fará o primeiro gol ou quantos 
+escanteios haverá. Essas informações são mais difíceis de conseguir e atualizar durante a 
+partida. Então seria ter acesso mais facilitado a esses dados. 
+[12:00, 17/07/2026] +55 81 8570-8677: 10 - Depender de uma empresa para decidir: Hoje, na 
+maioria das plataformas, uma empresa é quem decide quando a aposta terminou e quem 
+ganhou. Isso significa que todo mundo precisa confiar que ela fez tudo corretamente, mesmo 
+sem conseguir verificar por conta própria. Algumas não geram nem mesmo protocolo ou 
+fazem auditorias para esses resultados, e muitas pessoas as vezes mesmo ganhando tem suas 
+apostas anuladas 
+[12:18, 17/07/2026] +55 81 8570-8677: Sugestão de solução: 
+Uuma plataforma de mercados de previsão construída sobre a TxLINE que transforma a 
+liquidação de apostas em um processo totalmente transparente, verificável e compreensível. 
+Em vez de apenas informar quem ganhou, a plataforma mostra exatamente como aquele 
+resultado foi confirmado através das assinaturas criptográficas, Merkle Proofs e validação on
+chain da TxLINE na Solana. 
+Além disso, traduz toda essa complexidade para uma linguagem simples, tornando mercados 
+de previsão acessíveis para iniciantes, idosos e pessoas com deficiência visual. 
+Problema: 
+Hoje praticamente todas as plataformas de apostas ou prediction markets apresentam um 
+problema parecido: 
+Após o término da partida elas simplesmente dizem 
+Você ganhou. 
+ou 
+Você perdeu. 
+O usuário nunca sabe: 
+quem confirmou o resultado; 
+qual evento foi utilizado; 
+quando foi confirmado; 
+se houve atraso; 
+se a plataforma alterou alguma informação; 
+qual prova foi utilizada. 
+O usuário precisa confiar na empresa. 
+Em mercados descentralizados isso é ainda pior. 
+Como ela funciona 
+A Solução utiliza: 
+SSE Stream da TxLINE 
+Odds 
+Eventos 
+Scores 
+Assinaturas criptográficas 
+Merkle Proofs 
+Solana 
+para construir um motor de liquidação totalmente verificável. 
+Quando o jogo termina 
+TxLINE publica o evento 
+o contrato valida utilizando validate_stat 
+a liquidação acontece automaticamente 
+é gerado um recibo verificável 
+o usuário consegue verificar tudo. 
+Nosso diferencial: 
+Não é apenas provar. 
+É explicar. 
+Toda liquidação possui uma IA que traduz a prova criptográfica para linguagem humana. 
+Exemplo 
+Ao invés de mostrar 
+Hash 
+Signature 
+Merkle Root 
+Proof 
+Mostra 
+"O resultado foi confirmado automaticamente utilizando dados assinados pela TxLINE. 
+A assinatura foi validada. 
+O contrato inteligente confirmou que o resultado não foi alterado. 
+Por isso o prêmio foi liberado." 
+Recursos necessarios 
+Prediction Markets: 
+Winner 
+Over/Under 
+First Goal 
+First Card 
+Corners 
+Custom Markets 
+Liquidação automática: 
+Assim que a prova chega 
+o contrato executa 
+o mercado encerra 
+o pagamento é liberado. 
+Verifiable Receipt 
+Cada mercado gera um comprovante contendo: 
+Match ID 
+Timestamp 
+Match Event 
+Odds 
+Signature 
+Merkle Proof 
+Transaction 
+Validation Status 
+Explainable Settlement 
+Cada liquidação possui uma explicação. 
+Exemplo 
+Você apostou: 
+Mais de 2,5 gols. 
+Resultado 
+Brasil 2 × 1 Japão. 
+Foram marcados três gols. 
+Como três é maior que 2,5, sua previsão foi vencedora. 
+O resultado foi confirmado automaticamente pela TxLINE utilizando validação criptográfica 
+registrada na Solana. 
+Settlement Timeline: 
+Linha do tempo 
+18:34 
+Gol 
+89:56 
+Fim da partida 
+89:56 
+Evento recebido 
+89:56 
+Signature validada 
+89:56 
+Merkle validada 
+89:56 
+Contrato executado 
+Liquidação concluída 
+Acessibilidade 
+Modo pensado para 
+idosos 
+iniciantes 
+baixa visão 
+leitores de tela 
+Recursos: 
+Fonte ampliada  
+Alto contraste e modo daltonismo para diversos tipos diferentes de daltonismo 
+Navegação simplificada e direcionada a cada publico 
+Linguagem simples e direcionada a cada publico 
+Narração dos eventos 
+Explicações acessíveis, incluindo IA que faz libras ou gera legendas  
+Mercado 
+Iremos atuar com frentes para empresa e usuários da plataforma 
+B2C 
+Usuários de prediction markets 
+Fantasy Sports 
+Comunidades esportivas 
+B2B 
+Casas de apostas 
+Prediction Markets 
+Fantasy Platforms 
+Sports Analytics 
+Projetos Web3 
+O que usar no modelo de Negocio 
+White-label 
+API 
+SDK 
+Settlement Engine 
+Dashboard Enterprise 
+Por que faz sentido dentro do contexto do hacka e da TxLINE 
+Por que ela atua exatamente os diferenciais da plataforma e podemos tentar reforçar isso: 
+SSE 
+Odds 
+Eventos 
+Merkle Proofs 
+Signature 
+Solana 
+validate_stat 
+Liquidação automática 
+[12:18, 17/07/2026] +55 81 8570-8677: Don't trust. Verify. Cada liquidação pode ser verificada 
+por qualquer pessoa. 

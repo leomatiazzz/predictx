@@ -1,0 +1,175 @@
+{
+  "common": {
+    "live": "LIVE",
+    "viewAll": "View all",
+    "back": "Back",
+    "search": "Search",
+    "autoSettlement": "Auto Settlement ✓",
+    "payout": "Payout",
+    "winner": "WINNER",
+    "loser": "LOSER",
+    "wallet": "Wallet",
+    "disconnect": "Disconnect",
+    "today": "Today",
+    "usdc": "USDC",
+    "sol": "SOL"
+  },
+  "nav": {
+    "home": "Home",
+    "markets": "Markets",
+    "matches": "Matches",
+    "settlement": "Settlement Engine",
+    "verification": "Verification",
+    "history": "History",
+    "analytics": "Analytics",
+    "accessibility": "Accessibility",
+    "alerts": "Alerts",
+    "settings": "Settings"
+  },
+  "header": {
+    "searchPlaceholder": "Search markets...",
+    "connectWallet": "Connect Wallet",
+    "txlineApi": "TxLINE API",
+    "solana": "Solana",
+    "settlementEngine": "Settlement Engine"
+  },
+  "dashboard": {
+    "liveNow": "Live Now",
+    "featuredMarkets": "Featured Markets",
+    "upcomingMatches": "Upcoming Matches",
+    "recentSettlements": "Recent Settlements",
+    "settlementReplay": "Settlement Replay",
+    "mostRecent": "Most recent",
+    "watchFullReplay": "Watch Full Replay",
+    "verificationTitle": "Every settlement is verifiable.",
+    "verificationSubtitle": "Don't Trust. Verify.",
+    "verificationCta": "Learn Verification",
+    "viewFullHistory": "View full history",
+    "viewAllMatches": "View all matches"
+  },
+  "stats": {
+    "totalVolume": "TOTAL VOLUME",
+    "activeMarkets": "ACTIVE MARKETS",
+    "settlements24h": "SETTLEMENTS (24H)",
+    "avgSettlementTime": "AVG SETTLEMENT TIME",
+    "successRate": "SUCCESS RATE"
+  },
+  "settlement": {
+    "title": "Verification Engine",
+    "subtitle": "Watch real-time cryptographic settlements flowing through the TxLINE pipeline. True transparency in action.",
+    "liveSettlement": "Live Settlement",
+    "processing": "Processing Verification...",
+    "completed": "Settlement Completed",
+    "viewReceipt": "View Verifiable Receipt",
+    "receiptTitle": "Cryptographic Receipt",
+    "receiptTxHash": "Transaction Hash (Solana)",
+    "receiptMerkleRoot": "Merkle Root",
+    "receiptSignature": "TxLINE Signature payload"
+  },
+  "verification": {
+    "step1": "1 Event",
+    "step1Desc": "Received from TxLINE",
+    "step2": "2 Signature",
+    "step2Desc": "Validated",
+    "step3": "3 Merkle Proof",
+    "step3Desc": "Validated",
+    "step4": "4 validate_stat",
+    "step4Desc": "Executed",
+    "step5": "5 Settlement",
+    "step5Desc": "Completed",
+    "step6": "6 Receipt",
+    "step6Desc": "Generated"
+  },
+  "markets": {
+    "title": "All Markets",
+    "subtitle": "Discover live prediction markets ready for settlement.",
+    "matchWinner": "Match Winner",
+    "overUnderGoals": "Over/Under 2.5 Goals",
+    "firstGoal": "First Goal",
+    "totalCorners": "Total Corners",
+    "draw": "Draw",
+    "none": "None",
+    "over": "Over",
+    "under": "Under"
+  },
+  "matches": {
+    "title": "All Matches",
+    "subtitle": "Browse and filter upcoming verifiable events."
+  },
+  "matchDetails": {
+    "backToDashboard": "Back to Dashboard",
+    "allMarkets": "All Markets",
+    "goals": "Goals",
+    "corners": "Corners",
+    "proofAssistant": "Proof Assistant",
+    "proofAssistantActive": "Proof Assistant Active",
+    "proofAssistantDesc": "Odds are dynamically calculated based on liquidity pools. Settlement triggers immediately when TxLINE API broadcasts a signed event containing match final state, fully verifiable via Merkle Proofs on Solana. No manual intervention possible."
+  },
+  "history": {
+    "title": "Settlement History",
+    "subtitle": "Full cryptographic log of past settlements."
+  },
+  "analytics": {
+    "title": "Analytics Dashboard",
+    "subtitle": "Platform transparency and usage metrics.",
+    "totalVolume7d": "Total Trading Volume (7D)"
+  },
+  "accessibility": {
+    "title": "Accessibility Center",
+    "subtitle": "Customize your ProofLens experience.",
+    "visionModes": "Vision Simulation Modes",
+    "livePreview": "Live Preview",
+    "defaultVision": "Default Vision",
+    "uiScaling": "UI Scaling",
+    "uiScalingDesc": "Adjust the global interface size. Elements will scale proportionally using root REM adjustments, ensuring layouts remain perfectly intact.",
+    "successIndicator": "Success Indicator",
+    "dangerIndicator": "Danger Indicator"
+  },
+  "alerts": {
+    "title": "No Active Alerts",
+    "subtitle": "You will be notified here when your markets settle."
+  },
+  "settings": {
+    "title": "Account Settings",
+    "connectionStatus": "Connection Status",
+    "walletConnected": "Wallet Connected securely.",
+    "disconnectWallet": "Disconnect Wallet",
+    "noWallet": "No wallet connected. Use the header button to connect.",
+    "platformPreferences": "Platform Preferences",
+    "resetConfig": "Reset Configuration",
+    "resetConfigDesc": "Reset all local configurations to default."
+  },
+  "landing": {
+    "title1": "Don't Trust.",
+    "title2": "Verify.",
+    "subtitle": "The first prediction market where every settlement is cryptographically verifiable. Say goodbye to opaque odds and hello to transparent, on-chain execution powered by TxLINE on Solana.",
+    "exploreMarkets": "Explore Markets",
+    "learnVerification": "Learn Verification"
+  },
+  "language": {
+    "label": "Language",
+    "switch": "Switch",
+    "notNow": "Not now",
+    "neverAsk": "Never ask again",
+    "detected": "We noticed your preferred language is {language}. Would you like to switch?"
+  },
+  "glossary": {
+    "merkleProof": "A cryptographic proof that confirms match data has not been tampered with.",
+    "settlement": "The process of resolving a prediction market and distributing payouts.",
+    "over25": "You are predicting that there will be at least three goals in the match.",
+    "under25": "You are predicting that there will be fewer than three goals in the match.",
+    "txline": "A verifiable data pipeline that broadcasts signed events for settlement.",
+    "odds": "The probability ratio that determines your potential payout.",
+    "liquidity": "The total amount of funds available for trading in a market.",
+    "merkleRoot": "A single hash representing the entire dataset, used for verification.",
+    "signature": "A digital signature proving the authenticity of the data source.",
+    "txHash": "A unique identifier for a transaction on the Solana blockchain.",
+    "validateStat": "A function that validates match statistics against the on-chain proof.",
+    "winOver25": "You won because at least three goals were scored in the match.",
+    "loseOver25": "You lost because fewer than three goals were scored in the match.",
+    "winMatchWinner": "You won because your predicted team won the match.",
+    "loseMatchWinner": "You lost because your predicted team did not win the match.",
+    "winFirstGoal": "You won because your predicted team scored the first goal.",
+    "loseFirstGoal": "You lost because your predicted team did not score the first goal."
+  }
+}

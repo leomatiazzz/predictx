@@ -1,0 +1,175 @@
+{
+  "common": {
+    "live": "라이브",
+    "viewAll": "전체 보기",
+    "back": "뒤로",
+    "search": "검색",
+    "autoSettlement": "자동 정산 ✓",
+    "payout": "배당금",
+    "winner": "승자",
+    "loser": "패자",
+    "wallet": "지갑",
+    "disconnect": "연결 해제",
+    "today": "오늘",
+    "usdc": "USDC",
+    "sol": "SOL"
+  },
+  "nav": {
+    "home": "홈",
+    "markets": "시장",
+    "matches": "경기",
+    "settlement": "정산 엔진",
+    "verification": "검증",
+    "history": "기록",
+    "analytics": "분석",
+    "accessibility": "접근성",
+    "alerts": "알림",
+    "settings": "설정"
+  },
+  "header": {
+    "searchPlaceholder": "시장 검색...",
+    "connectWallet": "지갑 연결",
+    "txlineApi": "TxLINE API",
+    "solana": "Solana",
+    "settlementEngine": "정산 엔진"
+  },
+  "dashboard": {
+    "liveNow": "현재 라이브",
+    "featuredMarkets": "추천 시장",
+    "upcomingMatches": "예정된 경기",
+    "recentSettlements": "최근 정산",
+    "settlementReplay": "정산 리플레이",
+    "mostRecent": "최신",
+    "watchFullReplay": "전체 리플레이 보기",
+    "verificationTitle": "모든 정산은 검증 가능합니다.",
+    "verificationSubtitle": "신뢰하지 마세요. 검증하세요.",
+    "verificationCta": "검증 알아보기",
+    "viewFullHistory": "전체 기록 보기",
+    "viewAllMatches": "모든 경기 보기"
+  },
+  "stats": {
+    "totalVolume": "총 거래량",
+    "activeMarkets": "활성 시장",
+    "settlements24h": "정산 (24H)",
+    "avgSettlementTime": "평균 정산 시간",
+    "successRate": "성공률"
+  },
+  "settlement": {
+    "title": "검증 엔진",
+    "subtitle": "TxLINE 파이프라인을 통한 실시간 암호화 정산을 확인하세요. 진정한 투명성을 경험하십시오.",
+    "liveSettlement": "라이브 정산",
+    "processing": "검증 처리 중...",
+    "completed": "정산 완료",
+    "viewReceipt": "검증 가능한 영수증 보기",
+    "receiptTitle": "암호화 영수증",
+    "receiptTxHash": "트랜잭션 해시 (Solana)",
+    "receiptMerkleRoot": "머클 루트",
+    "receiptSignature": "TxLINE 서명"
+  },
+  "verification": {
+    "step1": "1 이벤트",
+    "step1Desc": "TxLINE에서 수신",
+    "step2": "2 서명",
+    "step2Desc": "검증됨",
+    "step3": "3 머클 증명",
+    "step3Desc": "검증됨",
+    "step4": "4 validate_stat",
+    "step4Desc": "실행됨",
+    "step5": "5 정산",
+    "step5Desc": "완료",
+    "step6": "6 영수증",
+    "step6Desc": "생성됨"
+  },
+  "markets": {
+    "title": "모든 시장",
+    "subtitle": "정산 준비가 된 라이브 예측 시장을 발견하세요.",
+    "matchWinner": "경기 승자",
+    "overUnderGoals": "오버/언더 2.5골",
+    "firstGoal": "첫 골",
+    "totalCorners": "총 코너",
+    "draw": "무승부",
+    "none": "없음",
+    "over": "오버",
+    "under": "언더"
+  },
+  "matches": {
+    "title": "모든 경기",
+    "subtitle": "예정된 검증 가능한 이벤트를 탐색하고 필터링하세요."
+  },
+  "matchDetails": {
+    "backToDashboard": "대시보드로 돌아가기",
+    "allMarkets": "모든 시장",
+    "goals": "골",
+    "corners": "코너",
+    "proofAssistant": "증명 어시스턴트",
+    "proofAssistantActive": "증명 어시스턴트 활성",
+    "proofAssistantDesc": "배당률은 유동성 풀을 기반으로 동적으로 계산됩니다. TxLINE API가 경기 최종 상태를 포함한 서명된 이벤트를 전송하면 즉시 정산이 트리거되며, Solana의 머클 증명으로 완전히 검증 가능합니다. 수동 개입은 불가능합니다."
+  },
+  "history": {
+    "title": "정산 기록",
+    "subtitle": "과거 정산의 완전한 암호화 로그."
+  },
+  "analytics": {
+    "title": "분석 대시보드",
+    "subtitle": "플랫폼 투명성 및 사용 지표.",
+    "totalVolume7d": "총 거래량 (7일)"
+  },
+  "accessibility": {
+    "title": "접근성 센터",
+    "subtitle": "ProofLens 경험을 맞춤화하세요.",
+    "visionModes": "시각 시뮬레이션 모드",
+    "livePreview": "실시간 미리보기",
+    "defaultVision": "기본 시력",
+    "uiScaling": "UI 스케일링",
+    "uiScalingDesc": "전체 인터페이스 크기를 조정하세요. 요소가 비례적으로 스케일되어 레이아웃이 완벽하게 유지됩니다.",
+    "successIndicator": "성공 표시기",
+    "dangerIndicator": "위험 표시기"
+  },
+  "alerts": {
+    "title": "활성 알림 없음",
+    "subtitle": "시장이 정산되면 여기서 알림을 받습니다."
+  },
+  "settings": {
+    "title": "계정 설정",
+    "connectionStatus": "연결 상태",
+    "walletConnected": "지갑이 안전하게 연결되었습니다.",
+    "disconnectWallet": "지갑 연결 해제",
+    "noWallet": "연결된 지갑 없음. 헤더 버튼을 사용하여 연결하세요.",
+    "platformPreferences": "플랫폼 환경설정",
+    "resetConfig": "구성 재설정",
+    "resetConfigDesc": "모든 로컬 구성을 기본값으로 재설정."
+  },
+  "landing": {
+    "title1": "신뢰하지 마세요.",
+    "title2": "검증하세요.",
+    "subtitle": "모든 정산이 암호학적으로 검증 가능한 최초의 예측 시장입니다. 불투명한 배당률에 작별을 고하고 TxLINE on Solana로 구동되는 투명한 온체인 실행을 환영합니다.",
+    "exploreMarkets": "시장 탐색",
+    "learnVerification": "검증 알아보기"
+  },
+  "language": {
+    "label": "언어",
+    "switch": "전환",
+    "notNow": "나중에",
+    "neverAsk": "다시 묻지 않기",
+    "detected": "선호 언어가 {language}인 것을 감지했습니다. 전환하시겠습니까?"
+  },
+  "glossary": {
+    "merkleProof": "경기 데이터가 변조되지 않았음을 확인하는 암호학적 증명.",
+    "settlement": "예측 시장을 해결하고 배당금을 분배하는 과정.",
+    "over25": "경기에서 최소 3골이 득점될 것으로 예측하고 있습니다.",
+    "under25": "경기에서 3골 미만으로 득점될 것으로 예측하고 있습니다.",
+    "txline": "정산을 위해 서명된 이벤트를 전송하는 검증 가능한 데이터 파이프라인.",
+    "odds": "잠재적 배당금을 결정하는 확률 비율.",
+    "liquidity": "시장에서 거래에 사용할 수 있는 총 자금.",
+    "merkleRoot": "전체 데이터셋을 나타내는 단일 해시. 검증에 사용.",
+    "signature": "데이터 소스의 진위를 증명하는 디지털 서명.",
+    "txHash": "Solana 블록체인의 트랜잭션 고유 식별자.",
+    "validateStat": "경기 통계를 온체인 증명에 대해 검증하는 함수.",
+    "winOver25": "경기에서 최소 3골이 득점되어 승리했습니다.",
+    "loseOver25": "경기에서 3골 미만이 득점되어 패배했습니다.",
+    "winMatchWinner": "예측한 팀이 경기에서 승리하여 승리했습니다.",
+    "loseMatchWinner": "예측한 팀이 경기에서 승리하지 않아 패배했습니다.",
+    "winFirstGoal": "예측한 팀이 첫 골을 득점하여 승리했습니다.",
+    "loseFirstGoal": "예측한 팀이 첫 골을 득점하지 못해 패배했습니다."
+  }
+}

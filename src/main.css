@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 23% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 23% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 24% 27%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 24% 27%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217 24% 27%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 24% 27%;
+    --input: 217 24% 27%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --success: 160 84% 39%;
+    --danger: 0 84% 60%;
+  }
+
+  html.vision-protanopia {
+    --success: 217 91% 60%;
+    --danger: 30 100% 50%;
+  }
+
+  html.vision-deuteranopia {
+    --success: 200 90% 50%;
+    --danger: 40 100% 50%;
+  }
+
+  html.vision-tritanopia {
+    --success: 0 80% 50%;
+    --primary: 160 84% 39%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/60 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
