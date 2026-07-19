@@ -55,8 +55,9 @@ export async function subscribeOnChain(
     TOKEN_2022_PROGRAM_ID,
     ASSOCIATED_TOKEN_PROGRAM_ID,
     getAssociatedTokenAddressSync,
+    createAssociatedTokenAccountInstruction,
   } = await import('@solana/spl-token')
-  const { PublicKey, SystemProgram } = await import('@solana/web3.js')
+  const { PublicKey, SystemProgram, Transaction } = await import('@solana/web3.js')
 
   const config = getConfig()
   const programId = new PublicKey(config.programId)
@@ -118,7 +119,24 @@ export async function subscribeOnChain(
     ASSOCIATED_TOKEN_PROGRAM_ID,
   )
 
-  const txSig = await program.methods
+  const tx = new Transaction()
+
+  // Create the ATA if it doesn't exist
+  const accountInfo = await connection.getAccountInfo(userTokenAccount)
+  if (!accountInfo) {
+    tx.add(
+      createAssociatedTokenAccountInstruction(
+        wallet.publicKey,
+        userTokenAccount,
+        wallet.publicKey,
+        txlTokenMint,
+        TOKEN_2022_PROGRAM_ID,
+        ASSOCIATED_TOKEN_PROGRAM_ID,
+      )
+    )
+  }
+
+  const subscribeIx = await program.methods
     .subscribe(FREE_SERVICE_LEVEL, SUBSCRIPTION_DURATION_WEEKS)
     .accounts({
       user: wallet.publicKey,
@@ -127,12 +145,19 @@ export async function subscribeOnChain(
       userTokenAccount,
       tokenTreasuryVault,
       tokenTreasuryPda,
-      tokenProgram: TOKEN_PROGRAM_ID,
-      token2022Program: TOKEN_2022_PROGRAM_ID,
-      associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
+      tokenProgram: TOKEN_2022_PROGRAM_ID,
       systemProgram: SystemProgram.programId,
+      associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
     })
-    .rpc()
+    .instruction()
+
+  tx.add(subscribeIx)
+
+  const latestBlockhash = await connection.getLatestBlockhash('confirmed')
+  tx.recentBlockhash = latestBlockhash.blockhash
+  tx.feePayer = wallet.publicKey
+
+  const txSig = await provider.sendAndConfirm(tx)
 
   return txSig
 }
