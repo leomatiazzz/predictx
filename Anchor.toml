@@ -1,0 +1,16 @@
+[features]
+default = []
+
+[programs.localnet]
+merkle_validator = "programs/merkle_validator"
+
+[registry]
+url = "https://anchorproject.com/deps"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+
+test = "anchor test"
