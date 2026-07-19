@@ -11,9 +11,11 @@ import { SOCCER_PHASES } from '@/types/txline'
 
 /**
  * Get all fixtures (or filtered by competition).
+ * For the World Cup Hackathon free tier, we MUST request competitionId 72
+ * otherwise the TxLINE API will return 403 Forbidden.
  */
-export async function getFixtures(competitionId?: number): Promise<TxLineFixture[]> {
-  const params = competitionId ? { competitionId } : undefined
+export async function getFixtures(competitionId: number = 72): Promise<TxLineFixture[]> {
+  const params = { competitionId, startEpochDay: 20624 }
   return txGet<TxLineFixture[]>('/fixtures/snapshot', params)
 }
 
