@@ -8,7 +8,7 @@ export function RecentSettlements() {
     <div className="glass-panel p-6">
       <div className="flex justify-between items-center mb-6">
         <h3 className="font-semibold text-sm text-muted-foreground uppercase">
-          Liquidações Recentes
+          Recent Settlements
         </h3>
       </div>
       <div className="space-y-4">
@@ -46,7 +46,7 @@ export function RecentSettlements() {
       </div>
       <div className="mt-4 pt-4 text-center">
         <Link to="/history" className="text-primary text-sm hover:underline">
-          Ver histórico completo →
+          View full history →
         </Link>
       </div>
     </div>

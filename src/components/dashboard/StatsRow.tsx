@@ -22,35 +22,35 @@ export function StatsRow() {
   const defaultData = [{ value: 10 }, { value: 15 }, { value: 8 }, { value: 20 }, { value: 25 }]
   const stats = [
     {
-      label: 'VOLUME TOTAL',
+      label: 'TOTAL VOLUME',
       value: '$2,450,291',
       change: '+12.4%',
       up: true,
       color: 'hsl(var(--success))',
     },
     {
-      label: 'MERCADOS ATIVOS',
+      label: 'ACTIVE MARKETS',
       value: '1,248',
       change: '+8.1%',
       up: true,
       color: 'hsl(var(--success))',
     },
     {
-      label: 'LIQUIDAÇÕES (24H)',
+      label: 'SETTLEMENTS (24H)',
       value: '532',
       change: '+15.3%',
       up: true,
       color: 'hsl(var(--success))',
     },
     {
-      label: 'TEMPO MÉDIO LIQUIDAÇÃO',
+      label: 'AVERAGE SETTLEMENT TIME',
       value: '1.8s',
       change: '-22.7%',
       up: false,
       color: 'hsl(var(--danger))',
     },
     {
-      label: 'TAXA DE SUCESSO',
+      label: 'SUCCESS RATE',
       value: '99.71%',
       change: '+0.5%',
       up: true,

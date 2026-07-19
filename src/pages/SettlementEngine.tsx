@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { VerificationStepper } from '@/components/VerificationStepper'
 import { Button } from '@/components/ui/button'
 import { ShieldCheck, FileText, ExternalLink, Loader2 } from 'lucide-react'
+import type { StepData } from '@/components/VerificationStepper'
 import {
   Dialog,
   DialogContent,
@@ -42,6 +43,15 @@ export default function SettlementEngine() {
   const [receipt, setReceipt] = useState<VerifiableReceipt | null>(null)
   const [receiptError, setReceiptError] = useState<string | null>(null)
 
+  const stepperSteps: StepData[] = [
+    { id: 1, label: '1 Event', desc: receipt ? 'Score snapshot available' : 'Waiting for data', time: receipt ? 'live' : '' },
+    { id: 2, label: '2 Proof', desc: receipt ? 'Merkle proof received' : 'Fetching proof', time: receipt ? 'ready' : '' },
+    { id: 3, label: '3 Merkle', desc: receipt ? 'Root verified' : 'Awaiting validation', time: receipt ? 'verified' : '' },
+    { id: 4, label: '4 Receipt', desc: receipt ? 'Receipt ready' : 'Generating receipt', time: receipt ? 'complete' : '' },
+    { id: 5, label: '5 Settlement', desc: receipt ? 'Completed' : 'Pending', time: receipt ? 'settled' : '' },
+    { id: 6, label: '6 Verification', desc: receipt ? 'Complete' : 'In progress', time: receipt ? 'done' : '' },
+  ]
+
   // Fetch real receipt and animate through steps
   useEffect(() => {
     setActiveStep(1)
@@ -49,16 +59,16 @@ export default function SettlementEngine() {
     setReceiptError(null)
 
     if (latestSettlement) {
-      // Use the actual fixtureId or fallback to liveMatch's fixtureId for demonstration
       const fixtureIdToFetch = latestSettlement.fixtureId ?? liveMatch.fixtureId ?? 22
       getStatValidation(fixtureIdToFetch, 1, 1)
         .then((validation) => {
           const generatedReceipt = buildVerifiableReceipt(
             validation,
             matchName,
-            '5Wj8XzWkyy9q3aM1vBwLKjZ8P9gXmN7TqRc5vF4' // TxSignature is provided by the blockchain context
+            'pending'
           )
           setReceipt(generatedReceipt)
+          setActiveStep(6)
         })
         .catch((err) => {
           setReceiptError(err.message || 'Failed to fetch cryptographic proof')
@@ -123,6 +133,7 @@ export default function SettlementEngine() {
           <VerificationStepper
             activeStep={activeStep}
             animate={true}
+            steps={stepperSteps}
             timestamps={activeStep === 6 ? timestamps : undefined}
           />
         </div>
@@ -190,6 +201,19 @@ export default function SettlementEngine() {
                       </p>
                       <p className="break-all text-foreground font-medium">
                         {receipt ? `${receipt.proofNodes} nodes` : receiptError ? 'N/A' : 'Fetching...'}
+                      </p>
+                    </div>
+
+                    {/* Event Description */}
+                    <div className="p-4 rounded-xl bg-background border border-white/5">
+                      <p className="text-muted-foreground text-xs uppercase tracking-wider mb-2">
+                        Validation Event
+                      </p>
+                      <p className="text-foreground font-medium">
+                        {receipt ? receipt.eventDescription : receiptError ? 'N/A' : 'Fetching...'}
+                      </p>
+                      <p className="text-muted-foreground text-xs mt-2">
+                        Phase: {receipt ? receipt.gamePhase : receiptError ? 'N/A' : 'Fetching...'}
                       </p>
                     </div>
 

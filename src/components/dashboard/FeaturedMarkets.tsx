@@ -48,10 +48,10 @@ export function FeaturedMarkets() {
     <div>
       <div className="flex justify-between items-center mb-4">
         <h3 className="font-semibold text-sm text-muted-foreground uppercase">
-          Mercados em Destaque
+          Featured Markets
         </h3>
         <Link to="/markets" className="text-primary text-sm hover:underline">
-          Ver todos →
+          View all →
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -67,7 +67,7 @@ export function FeaturedMarkets() {
                   variant="outline"
                   className="text-success border-success/30 bg-success/10 text-[10px] shrink-0"
                 >
-                  AO VIVO
+                  LIVE
                 </Badge>
               </div>
               <div className="space-y-2">
@@ -95,7 +95,7 @@ export function FeaturedMarkets() {
                 variant="secondary"
                 className="text-[9px] bg-success/10 text-success border-0 uppercase"
               >
-                Liquidação automática ✓
+                Auto-settlement ✓
               </Badge>
             </div>
           </div>

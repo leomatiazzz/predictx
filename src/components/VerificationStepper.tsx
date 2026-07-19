@@ -2,12 +2,12 @@ import { Check, Hexagon, FileText, Activity, ShieldCheck, Database } from 'lucid
 import { cn } from '@/lib/utils'
 
 const DEFAULT_STEPS = [
-  { id: 1, label: '1 Evento', desc: 'Recebido da TxLINE', icon: Activity },
-  { id: 2, label: '2 Assinatura', desc: 'Validada', icon: ShieldCheck },
-  { id: 3, label: '3 Merkle Proof', desc: 'Calculada', icon: Hexagon },
-  { id: 4, label: '4 validate_stat', desc: 'Executado on-chain', icon: Database },
-  { id: 5, label: '5 Liquidação', desc: 'Concluída', icon: Check },
-  { id: 6, label: '6 Recibo', desc: 'Gerado', icon: FileText },
+  { id: 1, label: '1 Event', desc: 'Received from TxLINE', icon: Activity },
+  { id: 2, label: '2 Signature', desc: 'Validated', icon: ShieldCheck },
+  { id: 3, label: '3 Merkle Proof', desc: 'Calculated', icon: Hexagon },
+  { id: 4, label: '4 validate_stat', desc: 'Executed on-chain', icon: Database },
+  { id: 5, label: '5 Settlement', desc: 'Completed', icon: Check },
+  { id: 6, label: '6 Receipt', desc: 'Generated', icon: FileText },
 ]
 
 export interface StepData {

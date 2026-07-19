@@ -39,7 +39,7 @@ export function UpcomingMatches() {
   return (
     <div className="glass-panel p-6">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="font-semibold text-sm text-muted-foreground uppercase">Próximos Jogos</h3>
+        <h3 className="font-semibold text-sm text-muted-foreground uppercase">Upcoming Matches</h3>
       </div>
       <div className="space-y-3">
         {upcomingMatches.map((match) => (
@@ -62,7 +62,7 @@ export function UpcomingMatches() {
       </div>
       <div className="mt-4 text-center">
         <Link to="/matches" className="text-primary text-sm hover:underline">
-          Ver todos os jogos →
+          View all matches →
         </Link>
       </div>
     </div>
