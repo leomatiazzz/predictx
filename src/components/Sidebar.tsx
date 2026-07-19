@@ -30,7 +30,12 @@ const navItems = [
 
 export function Sidebar() {
   const location = useLocation()
-  const { walletConnected, walletAddress, disconnectWallet } = useAppStore()
+  const { walletConnected, walletAddress, solBalance, authStatus, disconnectWallet } = useAppStore()
+
+  // Truncate for sidebar display
+  const shortAddress = walletAddress
+    ? `${walletAddress.slice(0, 4)}...${walletAddress.slice(-4)}`
+    : null
 
   return (
     <div className="h-full border-r border-border/50 glass-panel border-y-0 border-l-0 rounded-none flex flex-col bg-background/80">
@@ -41,7 +46,7 @@ export function Sidebar() {
         >
           <ShieldCheck className="w-8 h-8" />
           <div>
-            <div>ProofLens</div>
+            <div>PredictX</div>
             <div className="text-[10px] font-normal text-muted-foreground uppercase tracking-wider -mt-1">
               Don't Trust. Verify.
             </div>
@@ -71,18 +76,26 @@ export function Sidebar() {
       {walletConnected && (
         <div className="p-4 border-t border-border/50">
           <div className="glass-panel p-4 rounded-xl bg-secondary/20">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-2">
               <span className="text-xs text-muted-foreground">Wallet</span>
-              <span className="text-xs font-mono">{walletAddress}</span>
+              <span className="text-xs font-mono">{shortAddress}</span>
+            </div>
+            {/* Auth Status Badge */}
+            <div className="flex items-center gap-1.5 mb-3">
+              <span className={cn(
+                'w-1.5 h-1.5 rounded-full',
+                authStatus === 'ready' ? 'bg-success' : authStatus === 'error' ? 'bg-destructive' : 'bg-yellow-500',
+              )} />
+              <span className="text-[10px] text-muted-foreground uppercase tracking-wider">
+                {authStatus === 'ready' ? 'TxLINE Active' : authStatus === 'error' ? 'Auth Error' : 'Not Activated'}
+              </span>
             </div>
             <div className="space-y-2 mb-4">
               <div className="flex justify-between items-center">
-                <span className="text-sm font-medium">USDC</span>
-                <span className="text-sm">1,250.50</span>
-              </div>
-              <div className="flex justify-between items-center">
                 <span className="text-sm font-medium text-muted-foreground">SOL</span>
-                <span className="text-sm text-muted-foreground">4.32</span>
+                <span className="text-sm">
+                  {solBalance !== null ? solBalance.toFixed(4) : '—'}
+                </span>
               </div>
             </div>
             <Button

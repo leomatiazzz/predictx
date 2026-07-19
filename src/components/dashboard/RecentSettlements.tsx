@@ -25,7 +25,7 @@ export function RecentSettlements() {
                 <p className="text-sm font-medium">{settlement.matchName}</p>
                 <p className="text-xs text-muted-foreground">{settlement.marketName}</p>
                 <p
-                  className={`text-[10px] font-bold mt-1 ${settlement.status === 'VENCEDOR' ? 'text-success' : 'text-danger'}`}
+                  className={`text-[10px] font-bold mt-1 ${settlement.status === 'WINNER' ? 'text-success' : 'text-danger'}`}
                 >
                   {settlement.status}
                 </p>

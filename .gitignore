@@ -27,6 +27,7 @@ dev-dist-ssr
 *.tmp
 
 # Editor directories and files
+.ai/*
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -36,6 +37,7 @@ dev-dist-ssr
 *.njsproj
 *.sln
 *.sw?
+templates
 
 # Evaluation screenshots
 screenshot.png

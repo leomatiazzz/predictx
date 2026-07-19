@@ -16,7 +16,7 @@ export default function Accessibility() {
         </div>
         <div>
           <h1 className="text-3xl font-bold">Accessibility Center</h1>
-          <p className="text-muted-foreground">Customize your ProofLens experience.</p>
+          <p className="text-muted-foreground">Customize your PredictX experience.</p>
         </div>
       </div>
 

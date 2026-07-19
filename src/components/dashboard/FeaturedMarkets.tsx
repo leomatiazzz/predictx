@@ -1,9 +1,48 @@
 import { Link } from 'react-router-dom'
 import { useTxLine } from '@/hooks/use-tx-line'
 import { Badge } from '@/components/ui/badge'
+import { Skeleton } from '@/components/ui/skeleton'
+import { AlertCircle } from 'lucide-react'
 
 export function FeaturedMarkets() {
-  const { featuredMarkets } = useTxLine()
+  const { featuredMarkets, loading, error } = useTxLine()
+
+  if (loading) {
+    return (
+      <div>
+        <div className="flex justify-between items-center mb-4">
+          <Skeleton className="h-4 w-36" />
+          <Skeleton className="h-4 w-16" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="glass-panel p-4 flex flex-col gap-3">
+              <div className="flex justify-between items-center">
+                <Skeleton className="h-4 w-28" />
+                <Skeleton className="h-5 w-14 rounded-full" />
+              </div>
+              <Skeleton className="h-10 w-full rounded-lg" />
+              <Skeleton className="h-10 w-full rounded-lg" />
+              <Skeleton className="h-10 w-full rounded-lg" />
+              <div className="flex justify-between pt-2 border-t border-border/30">
+                <Skeleton className="h-3 w-20" />
+                <Skeleton className="h-4 w-24 rounded-full" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="glass-panel p-6 flex items-center gap-3 text-muted-foreground">
+        <AlertCircle className="w-5 h-5 text-destructive shrink-0" />
+        <span className="text-sm">Could not load markets: {error}</span>
+      </div>
+    )
+  }
 
   return (
     <div>

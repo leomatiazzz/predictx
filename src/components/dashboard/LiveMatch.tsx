@@ -1,9 +1,46 @@
 import { Link } from 'react-router-dom'
 import { Badge } from '@/components/ui/badge'
+import { Skeleton } from '@/components/ui/skeleton'
+import { AlertCircle } from 'lucide-react'
 import { useTxLine } from '@/hooks/use-tx-line'
 
 export function LiveMatch() {
-  const { liveMatch } = useTxLine()
+  const { liveMatch, loading, error } = useTxLine()
+
+  if (loading) {
+    return (
+      <div className="glass-panel p-6">
+        <div className="flex justify-between items-center mb-6">
+          <Skeleton className="h-4 w-24" />
+          <Skeleton className="h-6 w-16 rounded-full" />
+        </div>
+        <div className="flex justify-between items-center px-2 md:px-8">
+          <div className="flex items-center gap-4">
+            <Skeleton className="w-10 h-10 rounded-full" />
+            <Skeleton className="h-6 w-20" />
+          </div>
+          <div className="text-center space-y-2">
+            <Skeleton className="h-10 w-24 mx-auto" />
+            <Skeleton className="h-4 w-16 mx-auto" />
+          </div>
+          <div className="flex items-center gap-4">
+            <Skeleton className="h-6 w-20" />
+            <Skeleton className="w-10 h-10 rounded-full" />
+          </div>
+        </div>
+        <Skeleton className="mt-10 h-1.5 w-full rounded-full" />
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="glass-panel p-6 flex items-center gap-3 text-muted-foreground">
+        <AlertCircle className="w-5 h-5 text-destructive shrink-0" />
+        <span className="text-sm">Could not load live match: {error}</span>
+      </div>
+    )
+  }
 
   return (
     <Link to={`/match/${liveMatch.id}`} className="block">

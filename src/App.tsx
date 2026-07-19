@@ -20,31 +20,33 @@ import Settings from './pages/Settings'
 import MatchDetails from './pages/MatchDetails'
 
 const App = () => (
-  <I18nProvider>
-    <BrowserRouter>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Routes>
-          <Route path="/welcome" element={<Landing />} />
-          <Route element={<Layout />}>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/markets" element={<Markets />} />
-            <Route path="/matches" element={<Matches />} />
-            <Route path="/match/:id" element={<MatchDetails />} />
-            <Route path="/settlement" element={<SettlementEngine />} />
-            <Route path="/verification" element={<SettlementEngine />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/analytics" element={<Analytics />} />
-            <Route path="/accessibility" element={<Accessibility />} />
-            <Route path="/alerts" element={<Alerts />} />
-            <Route path="/settings" element={<Settings />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </TooltipProvider>
-    </BrowserRouter>
-  </I18nProvider>
+  <SolanaProvider>
+    <I18nProvider>
+      <BrowserRouter>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <Routes>
+            <Route path="/welcome" element={<Landing />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/markets" element={<Markets />} />
+              <Route path="/matches" element={<Matches />} />
+              <Route path="/match/:id" element={<MatchDetails />} />
+              <Route path="/settlement" element={<SettlementEngine />} />
+              <Route path="/verification" element={<SettlementEngine />} />
+              <Route path="/history" element={<History />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/accessibility" element={<Accessibility />} />
+              <Route path="/alerts" element={<Alerts />} />
+              <Route path="/settings" element={<Settings />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </TooltipProvider>
+      </BrowserRouter>
+    </I18nProvider>
+  </SolanaProvider>
 )
 
 export default App

@@ -35,8 +35,8 @@ type I18nContextType = {
 
 const I18nContext = createContext<I18nContextType | null>(null)
 
-const STORAGE_KEY = 'prooflens-language'
-const BANNER_KEY = 'prooflens-language-banner'
+const STORAGE_KEY = 'predictx-language'
+const BANNER_KEY = 'predictx-language-banner'
 
 function getNestedValue(obj: any, path: string): any {
   return path.split('.').reduce((acc, key) => acc?.[key], obj)
