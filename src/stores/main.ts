@@ -34,6 +34,15 @@ export const updateAppState = (updates: Partial<AppState>) => {
   listeners.forEach((listener) => listener(state))
 }
 
+const setVisionMode = (mode: AppState['visionMode']) => updateAppState({ visionMode: mode })
+const setUiScale = (scale: number) => updateAppState({ uiScale: scale })
+const setAuthStatus = (status: AuthStatus) => updateAppState({ authStatus: status })
+const setAuthError = (error: string | null) => updateAppState({ authError: error })
+const setCredentials = (jwt: string, token: string) =>
+  updateAppState({ guestJwt: jwt, apiToken: token, authStatus: 'ready', authError: null })
+const clearCredentials = () =>
+  updateAppState({ guestJwt: null, apiToken: null, authStatus: 'idle', authError: null })
+
 /**
  * Hook that combines the custom app state with Solana wallet-adapter state.
  *
@@ -86,14 +95,11 @@ export default function useAppStore() {
     connectWallet: () => setVisible(true),
     disconnectWallet: () => wallet.disconnect(),
     // App state actions
-    setVisionMode: (mode: AppState['visionMode']) => updateAppState({ visionMode: mode }),
-    setUiScale: (scale: number) => updateAppState({ uiScale: scale }),
-    // Auth actions
-    setAuthStatus: (status: AuthStatus) => updateAppState({ authStatus: status }),
-    setAuthError: (error: string | null) => updateAppState({ authError: error }),
-    setCredentials: (jwt: string, token: string) =>
-      updateAppState({ guestJwt: jwt, apiToken: token, authStatus: 'ready', authError: null }),
-    clearCredentials: () =>
-      updateAppState({ guestJwt: null, apiToken: null, authStatus: 'idle', authError: null }),
+    setVisionMode,
+    setUiScale,
+    setAuthStatus,
+    setAuthError,
+    setCredentials,
+    clearCredentials,
   }
 }
