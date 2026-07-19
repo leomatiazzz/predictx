@@ -1,131 +1,106 @@
-# Projeto Criado com o Skip
+# PredictX
 
-Este projeto foi criado de ponta a ponta com o [Skip](https://goskip.dev).
+This repository brings together a React/Vite frontend application with Solana integrations and an experimental Anchor program designed to validate Merkle proofs and trigger a CPI to TxLINE.
 
-## 🚀 Stack Tecnológica
+## Project Overview
 
-- **React 19** - Biblioteca JavaScript para construção de interfaces
-- **Vite** - Build tool extremamente rápida
-- **TypeScript** - Superset tipado do JavaScript
-- **Shadcn UI** - Componentes reutilizáveis e acessíveis
-- **Tailwind CSS** - Framework CSS utility-first
-- **React Router** - Roteamento para aplicações React
-- **React Hook Form** - Gerenciamento de formulários performático
-- **Zod** - Validação de schemas TypeScript-first
-- **Recharts** - Biblioteca de gráficos para React
+The project is organized into two main parts:
 
-## 📋 Pré-requisitos
+- A web frontend built with React, TypeScript, and Vite, featuring a UI based on shadcn/ui components and Tailwind CSS.
+- A standalone Anchor program located in [programs/merkle_validator](programs/merkle_validator), responsible for validating a Merkle proof, preparing a call to TxLINE's `validate_stat` instruction, and subsequently executing an SPL Token transfer.
+
+The current implementation serves as a proof of concept or initial framework for the hackathon and still requires on-chain validation for full integration with TxLINE.
+
+## Core Stack
+
+- React 19
+- Vite
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Solana Web3 / wallet adapter
+- Anchor
+- SPL Token
+- TxLINE IDL snapshot at [src/services/txline/txoracle.json](src/services/txline/txoracle.json)
+
+## Prerequisites
+
+### Frontend
 
 - Node.js 18+
-- npm
+- npm or pnpm
 
-## 🔧 Instalação
+### Anchor / Solana Program
+
+If you wish to compile, test, or deploy the Anchor program, you will also need to install:
+
+- Rust + Cargo
+- Anchor CLI
+- Solana CLI
+- A locally configured Solana wallet
+
+## Frontend Installation
+
+Using npm:
 
 ```bash
 npm install
 ```
 
-## 💻 Scripts Disponíveis
-
-### Desenvolvimento
+Using pnpm:
 
 ```bash
-# Iniciar servidor de desenvolvimento
-npm start
-# ou
+pnpm install
+```
+
+## Running the Application Locally
+
+```bash
 npm run dev
 ```
 
-Abre a aplicação em modo de desenvolvimento em [http://localhost:5173](http://localhost:5173).
+The application will be available at http://localhost:5173.
 
-### Build
+## Production Build
 
 ```bash
-# Build para produção
 npm run build
-
-# Build para desenvolvimento
-npm run build:dev
 ```
 
-Gera os arquivos otimizados para produção na pasta `dist/`.
+Optimized artifacts will be generated in the `dist/` folder. ## Anchor / Merkle Validator Program
 
-### Preview
+The Anchor program is located at [programs/merkle_validator/src/lib.rs](programs/merkle_validator/src/lib.rs), and the Anchor workspace is configured in [Anchor.toml](Anchor.toml).
+
+### Key commands
 
 ```bash
-# Visualizar build de produção localmente
-npm run preview
+anchor build
+anchor test
+anchor deploy
 ```
 
-Permite visualizar a build de produção localmente antes do deploy.
+> The full deployment and validation workflow requires a live environment with the correct Program ID, accounts compatible with TxLINE, and a configured network.
 
-### Linting e Formatação
+## Comprehensive operating guide
 
-```bash
-# Executar linter
-npm run lint
+A detailed guide covering installation, Solana environment setup, building, testing, deployment, account configuration, and CPI validation can be found at:
 
-# Executar linter e corrigir problemas automaticamente
-npm run lint:fix
+- [programs/merkle_validator/OPERATING_GUIDE.md](programs/merkle_validator/OPERATING_GUIDE.md)
 
-# Formatar código com Oxfmt
-npm run format
-```
+This file serves as the primary reference for getting the program up and running in a practical setting.
 
-## 📁 Estrutura do Projeto
+## Relevant repository structure
 
-```
+```text
 .
-├── src/              # Código fonte da aplicação
-├── public/           # Arquivos estáticos
-├── dist/             # Build de produção (gerado)
-├── node_modules/     # Dependências (gerado)
-└── package.json      # Configurações e dependências do projeto
+├── src/                                # React/Vite frontend
+├── programs/
+│   └── merkle_validator/              # standalone Anchor program
+├── Anchor.toml                         # Anchor workspace configuration
+├── package.json                        # frontend dependencies and scripts
+└── programs/merkle_validator/OPERATING_GUIDE.md
 ```
 
-## 🎨 Componentes UI
+## Important note
 
-Este template inclui uma biblioteca completa de componentes Shadcn UI baseados em Radix UI:
-
-- Accordion
-- Alert Dialog
-- Avatar
-- Button
-- Checkbox
-- Dialog
-- Dropdown Menu
-- Form
-- Input
-- Label
-- Select
-- Switch
-- Tabs
-- Toast
-- Tooltip
-- E muito mais...
-
-## 📝 Ferramentas de Qualidade de Código
-
-- **TypeScript**: Tipagem estática
-- **Oxlint**: Linter extremamente rápido
-- **Oxfmt**: Formatação automática de código
-
-## 🔄 Workflow de Desenvolvimento
-
-1. Instale as dependências: `npm install`
-2. Inicie o servidor de desenvolvimento: `npm start`
-3. Faça suas alterações
-4. Verifique o código: `npm run lint`
-5. Formate o código: `npm run format`
-6. Crie a build: `npm run build`
-7. Visualize a build: `npm run preview`
-
-## 📦 Build e Deploy
-
-Para criar uma build otimizada para produção:
-
-```bash
-npm run build
-```
-
-Os arquivos otimizados serão gerados na pasta `dist/` e estarão prontos para deploy.
+This repository combines a frontend application with a Solana/Anchor proof-of-concept. For hackathon purposes, the most relevant aspects to demonstrate are the integration structure and the validation/transfer workflow designed for TxLINE. Full compatibility with the actual TxLINE program still requires on-chain validation and adjustments to the account layout based on the deployed version.
