@@ -71,7 +71,7 @@ export function buildVerifiableReceipt(
     matchName,
     timestamp: summary.updateStats.maxTimestamp,
     eventDescription,
-    merkleRoot: typeof merkleRoot === 'string' ? merkleRoot.slice(0, 16) + '...' : 'N/A',
+    merkleRoot: typeof merkleRoot === 'string' ? merkleRoot : 'N/A',
     txSignature: txSignature ?? 'pending',
     proofNodes,
     validationStatus: 'valid',

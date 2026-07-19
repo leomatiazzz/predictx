@@ -12,8 +12,8 @@
  */
 
 import { useState, useEffect, useCallback } from 'react'
-import { isAuthenticated, setCredentials } from '@/services/txline/apiClient'
-import { getGuestJwt, fullAuthFlow } from '@/services/txline/auth'
+import { isAuthenticated } from '@/services/txline/apiClient'
+import { fullAuthFlow } from '@/services/txline/auth'
 import { getNormalizedFixtures } from '@/services/txline/fixtures'
 import { getOddsSnapshot, normalizeOddsToMarket } from '@/services/txline/odds'
 import { getLatestScore, normalizeScore } from '@/services/txline/scores'
@@ -51,6 +51,7 @@ export type Market = {
 
 export type Settlement = {
   id: string
+  fixtureId?: number
   matchName: string
   marketName: string
   marketType: 'Over25' | 'MatchWinner' | 'FirstGoal'
@@ -126,49 +127,31 @@ function fixtureToMatch(fixture: NormalizedFixture, score?: { home: number; away
 }
 
 // ============================================================
-// Fallback mock data (for when API is not authenticated)
+// Empty state (no fabricated fixtures/markets)
 // ============================================================
 
-const MOCK_LIVE_MATCH: Match = {
-  id: 'm1',
-  homeTeam: 'Brazil',
-  awayTeam: 'Japan',
-  homeFlag: '🇧🇷',
-  awayFlag: '🇯🇵',
-  score: '2 - 1',
-  time: "90+5'",
-  isLive: true,
+const EMPTY_MATCH: Match = {
+  id: '',
+  homeTeam: '',
+  awayTeam: '',
+  homeFlag: '',
+  awayFlag: '',
+  score: '',
+  time: '',
+  isLive: false,
 }
-
-const MOCK_UPCOMING: Match[] = [
-  { id: 'm2', homeTeam: 'France', awayTeam: 'Argentina', homeFlag: '🇫🇷', awayFlag: '🇦🇷', score: '0 - 0', time: 'Today • 16:00', isLive: false },
-  { id: 'm3', homeTeam: 'Germany', awayTeam: 'Spain', homeFlag: '🇩🇪', awayFlag: '🇪🇸', score: '0 - 0', time: 'Today • 19:00', isLive: false },
-]
-
-const MOCK_MARKETS: Market[] = [
-  { id: 'mk1', matchId: 'm1', title: 'Match Winner — Brazil vs Japan', titleKey: 'markets.matchWinner', options: [{ label: 'Brazil', odds: 1.25, probability: 78 }, { label: 'Draw', odds: 5.4, probability: 15 }, { label: 'Japan', odds: 9.2, probability: 7 }], volume: 125430, isLive: true },
-  { id: 'mk2', matchId: 'm1', title: 'Over/Under 2.5 Goals', titleKey: 'markets.overUnderGoals', options: [{ label: 'Over 2.5', odds: 1.68, probability: 62 }, { label: 'Under 2.5', odds: 2.15, probability: 38 }], volume: 98210, isLive: true },
-  { id: 'mk3', matchId: 'm1', title: 'First Goal — Brazil vs Japan', titleKey: 'markets.firstGoal', options: [{ label: 'Brazil', odds: 1.85, probability: 55 }, { label: 'Japan', odds: 2.35, probability: 38 }, { label: 'No Goal', odds: 15.0, probability: 7 }], volume: 45330, isLive: true },
-  { id: 'mk4', matchId: 'm1', title: 'Total Corners', titleKey: 'markets.totalCorners', options: [{ label: 'Over 9.5', odds: 1.9, probability: 53 }, { label: 'Under 9.5', odds: 1.9, probability: 47 }], volume: 32660, isLive: true },
-]
-
-const MOCK_SETTLEMENTS: Settlement[] = [
-  { id: 's1', matchName: 'Brazil vs Japan', marketName: 'Over 2.5 Goals', marketType: 'Over25', status: 'WINNER', payout: 18.75, minutesAgo: 2, timeAgo: '2m ago' },
-  { id: 's2', matchName: 'Portugal vs Morocco', marketName: 'Match Winner', marketType: 'MatchWinner', status: 'WINNER', payout: 12.4, minutesAgo: 15, timeAgo: '15m ago' },
-  { id: 's3', matchName: 'England vs Senegal', marketName: 'First Goal', marketType: 'FirstGoal', status: 'LOSER', payout: -10.0, minutesAgo: 28, timeAgo: '28m ago' },
-]
 
 // ============================================================
 // Main hook
 // ============================================================
 
 export function useTxLine() {
-  const [liveMatch, setLiveMatch] = useState<Match>(MOCK_LIVE_MATCH)
-  const [upcomingMatches, setUpcomingMatches] = useState<Match[]>(MOCK_UPCOMING)
-  const [featuredMarkets, setFeaturedMarkets] = useState<Market[]>(MOCK_MARKETS)
-  const [recentSettlements] = useState<Settlement[]>(MOCK_SETTLEMENTS)
+  const [liveMatch, setLiveMatch] = useState<Match>(EMPTY_MATCH)
+  const [upcomingMatches, setUpcomingMatches] = useState<Match[]>([])
+  const [featuredMarkets, setFeaturedMarkets] = useState<Market[]>([])
+  const [recentSettlements] = useState<Settlement[]>([])
   const [allFixtures, setAllFixtures] = useState<NormalizedFixture[]>([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [isFallback, setIsFallback] = useState(false)
   const [isConnected, setIsConnected] = useState(false)
@@ -181,11 +164,16 @@ export function useTxLine() {
     setLoading(true)
     setError(null)
     setIsFallback(false)
+    setIsConnected(false)
+    setLiveMatch(EMPTY_MATCH)
+    setUpcomingMatches([])
+    setFeaturedMarkets([])
+    setAllFixtures([])
 
     try {
       if (!isAuthenticated()) {
         if (!wallet.connected || !wallet.publicKey || !wallet.signMessage) {
-          setIsFallback(true)
+          setError('Connect your wallet to fetch live predictions data.')
           setLoading(false)
           return
         }
@@ -195,25 +183,24 @@ export function useTxLine() {
             wallet,
             connection,
             wallet.signMessage,
-            (status) => setAuthStatus(status as any)
+            (status) => setAuthStatus(status as any),
           )
         } catch (authErr) {
-          console.warn('TxLINE Auth failed, using fallback mocks', authErr)
-          setAuthError(authErr instanceof Error ? authErr.message : 'Failed to authenticate')
-          setIsFallback(true)
+          console.warn('TxLINE Auth failed:', authErr)
+          const errorMsg = authErr instanceof Error ? authErr.message : 'Failed to authenticate'
+          setAuthError(errorMsg)
+          setError(errorMsg)
           setLoading(false)
           return
         }
       }
-      // Fetch all fixtures
+
       const fixtures = await getNormalizedFixtures()
       setAllFixtures(fixtures)
 
-      // Find live matches
       const live = fixtures.filter((f) => f.isLive)
       const upcoming = fixtures.filter((f) => f.isUpcoming).slice(0, 5)
 
-      // Fetch scores for live matches
       if (live.length > 0) {
         const firstLive = live[0]
         const score = await getLatestScore(firstLive.fixtureId)
@@ -222,12 +209,10 @@ export function useTxLine() {
         )
       }
 
-      // Map upcoming fixtures to Match type
       if (upcoming.length > 0) {
         setUpcomingMatches(upcoming.map((f) => fixtureToMatch(f)))
       }
 
-      // Fetch odds for the first live fixture to build markets
       if (live.length > 0) {
         try {
           const odds = await getOddsSnapshot(live[0].fixtureId)
@@ -247,15 +232,14 @@ export function useTxLine() {
             )
           }
         } catch {
-          // Odds may not be available for all fixtures
+          setFeaturedMarkets([])
         }
       }
-      
+
       setIsConnected(true)
     } catch (err) {
-      console.warn('TxLINE fetch failed, using fallback mocks', err)
+      console.error('TxLINE fetch failed:', err)
       setError(err instanceof Error ? err.message : 'Failed to fetch data')
-      setIsFallback(true)
       setIsConnected(false)
     } finally {
       setLoading(false)
@@ -267,7 +251,7 @@ export function useTxLine() {
     fetchData()
   }, [fetchData])
 
-  // Connect to SSE streams for real-time updates
+  // Connect to SSE streams for real-time updates once the initial snapshot has loaded
   useEffect(() => {
     if (!isConnected) return
 
@@ -279,24 +263,28 @@ export function useTxLine() {
           let hasChanges = false
 
           entries.forEach((entry) => {
-            if (!entry.fixtureId || !entry.marketType || !entry.odds) return
-            
-            const marketIndex = updated.findIndex(
-              (m) => m.matchId === String(entry.fixtureId) && m.title.includes(entry.marketType as string)
-            )
+            const fixtureId = entry.fixtureId ?? entry.FixtureId
+            const marketType = entry.marketType ?? entry.MarketType ?? 'Match Result'
+
+            if (!fixtureId || !marketType || !entry.odds?.length) return
+
+            const marketIndex = updated.findIndex((m) => {
+              return m.matchId === String(fixtureId) || m.title.includes(marketType)
+            })
 
             if (marketIndex >= 0) {
               const currentMarket = updated[marketIndex]
-              const normalized = normalizeOddsToMarket(
-                entry,
-                entry.fixtureId,
-                currentMarket.title.split(' — ')[1]?.split(' vs ')[0] ?? 'Home',
-                currentMarket.title.split(' — ')[1]?.split(' vs ')[1] ?? 'Away'
-              )
-              
+              const segments = currentMarket.title.includes(' — ')
+                ? currentMarket.title.split(' — ')[1]?.split(' vs ') ?? []
+                : []
+              const [homeTeam, awayTeam] = segments
+              const normalized = normalizeOddsToMarket(entry, fixtureId, homeTeam ?? 'Home', awayTeam ?? 'Away')
+
               updated[marketIndex] = {
                 ...currentMarket,
+                title: normalized.title || currentMarket.title,
                 options: normalized.options,
+                isLive: true,
               }
               hasChanges = true
             }
@@ -307,10 +295,10 @@ export function useTxLine() {
       },
       (event, data) => {
         const entries = (Array.isArray(data) ? data : [data]) as TxLineScoreEntry[]
-        
+
         entries.forEach((entry) => {
           const normalizedScore = normalizeScore(entry)
-          
+
           // Update live match score if it matches
           setLiveMatch((prev) => {
             if (prev.fixtureId === normalizedScore.fixtureId) {
@@ -324,11 +312,11 @@ export function useTxLine() {
             return prev
           })
         })
-      }
+      },
     )
 
     return cleanup
-  }, [])
+  }, [isConnected])
 
   return {
     liveMatch,

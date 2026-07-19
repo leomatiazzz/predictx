@@ -50,8 +50,12 @@ export async function subscribeOnChain(
 ): Promise<string> {
   // Dynamic import to avoid bundling Anchor when not needed
   const anchor = await import('@coral-xyz/anchor')
-  const { TOKEN_2022_PROGRAM_ID, ASSOCIATED_TOKEN_PROGRAM_ID, getAssociatedTokenAddressSync } =
-    await import('@solana/spl-token')
+  const {
+    TOKEN_PROGRAM_ID,
+    TOKEN_2022_PROGRAM_ID,
+    ASSOCIATED_TOKEN_PROGRAM_ID,
+    getAssociatedTokenAddressSync,
+  } = await import('@solana/spl-token')
   const { PublicKey, SystemProgram } = await import('@solana/web3.js')
 
   const config = getConfig()
@@ -63,12 +67,30 @@ export async function subscribeOnChain(
   })
   anchor.setProvider(provider)
 
-  // Load IDL dynamically based on network
-  // For the hackathon, we use the program ID directly
-  const program = new anchor.Program(
-    { version: '0.1.0', name: 'txoracle', instructions: [], accounts: [], types: [] },
-    provider,
-  )
+  // Load the official IDL from the checked-in artifact first, then fall back to the remote source.
+  const idlCandidates = [
+    new URL('./txoracle.json', import.meta.url).href,
+    'https://raw.githubusercontent.com/txodds/tx-on-chain/main/examples/devnet/idl/txoracle.json',
+  ]
+
+  let idl: Record<string, unknown> | null = null
+  for (const idlUrl of idlCandidates) {
+    try {
+      const idlResponse = await fetch(idlUrl)
+      if (idlResponse.ok) {
+        idl = await idlResponse.json()
+        break
+      }
+    } catch {
+      // Try the next candidate.
+    }
+  }
+
+  if (!idl) {
+    throw new Error('Failed to load TxLINE IDL from the local artifact or remote source.')
+  }
+
+  const program = new anchor.Program(idl as any, provider)
 
   const [tokenTreasuryPda] = PublicKey.findProgramAddressSync(
     [Buffer.from('token_treasury_v2')],
@@ -105,7 +127,8 @@ export async function subscribeOnChain(
       userTokenAccount,
       tokenTreasuryVault,
       tokenTreasuryPda,
-      tokenProgram: TOKEN_2022_PROGRAM_ID,
+      tokenProgram: TOKEN_PROGRAM_ID,
+      token2022Program: TOKEN_2022_PROGRAM_ID,
       associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
       systemProgram: SystemProgram.programId,
     })
