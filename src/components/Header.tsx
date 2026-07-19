@@ -5,6 +5,7 @@ import { LanguageSelector } from '@/components/LanguageSelector'
 import useAppStore from '@/stores/main'
 import { useI18n } from '@/i18n/context'
 import { useTxLine } from '@/hooks/use-tx-line'
+import { Link, useNavigate } from 'react-router-dom'
 
 function StatusPill({ label, status = 'ok' }: { label: string; status?: 'ok' | 'warn' | 'error' | 'loading' }) {
   const colorMap = {
@@ -24,6 +25,7 @@ function StatusPill({ label, status = 'ok' }: { label: string; status?: 'ok' | '
 export function Header() {
   const { walletConnected, walletAddress, walletConnecting, authStatus, connectWallet, disconnectWallet } = useAppStore()
   const { t } = useI18n()
+  const navigate = useNavigate()
 
   const { isFallback, isConnected } = useTxLine()
 
@@ -52,11 +54,18 @@ export function Header() {
           <Input
             className="pl-9 bg-secondary/30 border-none rounded-full h-9 text-sm"
             placeholder={t('header.searchPlaceholder')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                navigate(`/markets?q=${encodeURIComponent(e.currentTarget.value)}`)
+              }
+            }}
           />
         </div>
         <LanguageSelector />
-        <Button variant="ghost" size="icon" className="rounded-full">
-          <Bell className="w-5 h-5 text-muted-foreground" />
+        <Button asChild variant="ghost" size="icon" className="rounded-full">
+          <Link to="/alerts">
+            <Bell className="w-5 h-5 text-muted-foreground" />
+          </Link>
         </Button>
         {walletConnected ? (
           <Button

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Toaster } from '@/components/ui/toaster'
 import { Toaster as Sonner } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
@@ -19,32 +19,42 @@ import Alerts from './pages/Alerts'
 import Settings from './pages/Settings'
 import MatchDetails from './pages/MatchDetails'
 
+const router = createBrowserRouter([
+  {
+    path: '/welcome',
+    element: <Landing />,
+  },
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { path: '/', element: <Dashboard /> },
+      { path: '/markets', element: <Markets /> },
+      { path: '/matches', element: <Matches /> },
+      { path: '/match/:id', element: <MatchDetails /> },
+      { path: '/settlement', element: <SettlementEngine /> },
+      { path: '/verification', element: <SettlementEngine /> },
+      { path: '/history', element: <History /> },
+      { path: '/analytics', element: <Analytics /> },
+      { path: '/accessibility', element: <Accessibility /> },
+      { path: '/alerts', element: <Alerts /> },
+      { path: '/settings', element: <Settings /> },
+    ],
+  },
+  {
+    path: '*',
+    element: <NotFound />,
+  },
+])
+
 const App = () => (
   <SolanaProvider>
     <I18nProvider>
-      <BrowserRouter>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <Routes>
-            <Route path="/welcome" element={<Landing />} />
-            <Route element={<Layout />}>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/markets" element={<Markets />} />
-              <Route path="/matches" element={<Matches />} />
-              <Route path="/match/:id" element={<MatchDetails />} />
-              <Route path="/settlement" element={<SettlementEngine />} />
-              <Route path="/verification" element={<SettlementEngine />} />
-              <Route path="/history" element={<History />} />
-              <Route path="/analytics" element={<Analytics />} />
-              <Route path="/accessibility" element={<Accessibility />} />
-              <Route path="/alerts" element={<Alerts />} />
-              <Route path="/settings" element={<Settings />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </TooltipProvider>
-      </BrowserRouter>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <RouterProvider router={router} />
+      </TooltipProvider>
     </I18nProvider>
   </SolanaProvider>
 )
